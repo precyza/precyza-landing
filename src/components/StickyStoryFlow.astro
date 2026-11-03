@@ -1,0 +1,332 @@
+---
+import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowRight } from '@lucide/astro';
+---
+
+<section id="flujo" class="relative bg-[#071527] py-24 lg:py-32 text-white border-t border-white/10 overflow-hidden">
+  <!-- Ambient background lighting -->
+  <div class="absolute top-1/4 -right-40 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(15,169,104,0.22)_0%,transparent_60%)] blur-3xl pointer-events-none"></div>
+  <div class="absolute bottom-1/4 -left-40 w-96 h-96 bg-[radial-gradient(circle_at_center,rgba(38,194,129,0.18)_0%,transparent_60%)] blur-3xl pointer-events-none"></div>
+
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    
+    <div class="mx-auto max-w-3xl text-center mb-16 lg:mb-24">
+      <h2 class="text-3xl sm:text-5xl font-normal tracking-tight text-white">
+        Un flujo automatizado en 3 tiempos exactos
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-[#F4F5F7]/80">
+        De la conversación en WhatsApp a la comanda en cocina sin intervención manual.
+      </p>
+    </div>
+
+    <!-- Desktop: Two-Column Sticky Story / Mobile: Stacked -->
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+      
+      <!-- Left Column: 3 Steps (Scroll triggers) -->
+      <div class="lg:col-span-5 space-y-12 lg:space-y-24">
+        
+        <!-- Step 1 Trigger -->
+        <div id="step-trigger-1" class="step-card group cursor-pointer transition-all duration-300 opacity-100" data-step="1">
+          <div class="flex items-center gap-3">
+            <span class="step-badge flex h-8 w-8 items-center justify-center rounded-full bg-[#0FA968] text-white text-xs font-semibold shadow-[0_0_15px_rgba(15,169,104,0.4)]">
+              01
+            </span>
+            <span class="text-xs font-semibold tracking-wider text-[#26C281] uppercase">Paso Uno · WhatsApp</span>
+          </div>
+
+          <h3 class="step-title mt-4 text-2xl lg:text-3xl font-normal text-white group-hover:text-[#26C281] transition-colors">
+            Toma de pedidos conversacional sin colas
+          </h3>
+
+          <p class="mt-3 text-[15px] leading-relaxed text-[#F4F5F7]/75">
+            El cliente escribe o envía notas de voz. El agente entiende ingredientes, platos agotados, notas de cocina ("sin cebolla", "papas extra") y calcula la cuenta exacta en dólares y Bolívares a la tasa oficial BCV.
+          </p>
+
+          <div class="mt-4 flex items-center gap-2 text-[13px] text-[#26C281] font-medium">
+            <span>Respuesta en menos de 2 segundos</span>
+            <Check class="h-4 w-4" />
+          </div>
+        </div>
+
+        <!-- Step 2 Trigger -->
+        <div id="step-trigger-2" class="step-card group cursor-pointer transition-all duration-300 opacity-50" data-step="2">
+          <div class="flex items-center gap-3">
+            <span class="step-badge flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white text-xs font-semibold">
+              02
+            </span>
+            <span class="text-xs font-semibold tracking-wider text-[#26C281] uppercase">Paso Dos · Verificación</span>
+          </div>
+
+          <h3 class="step-title mt-4 text-2xl lg:text-3xl font-normal text-white group-hover:text-[#26C281] transition-colors">
+            Validación bancaria automática a tus cuentas
+          </h3>
+
+          <p class="mt-3 text-[15px] leading-relaxed text-[#F4F5F7]/75">
+            El cliente paga por Pago Móvil y comparte la referencia. El sistema consulta directamente la API bancaria de tus cuentas en 1.8 segundos. Si los fondos no están en cuenta, la orden no procede.
+          </p>
+
+          <div class="mt-4 flex items-center gap-2 text-[13px] text-[#26C281] font-medium">
+            <span>Cero capturas editadas de Photoshop</span>
+            <Check class="h-4 w-4" />
+          </div>
+        </div>
+
+        <!-- Step 3 Trigger -->
+        <div id="step-trigger-3" class="step-card group cursor-pointer transition-all duration-300 opacity-50" data-step="3">
+          <div class="flex items-center gap-3">
+            <span class="step-badge flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white text-xs font-semibold">
+              03
+            </span>
+            <span class="text-xs font-semibold tracking-wider text-[#26C281] uppercase">Paso Tres · Inyección</span>
+          </div>
+
+          <h3 class="step-title mt-4 text-2xl lg:text-3xl font-normal text-white group-hover:text-[#26C281] transition-colors">
+            Inyección al POS existente e impresión en cocina
+          </h3>
+
+          <p class="mt-3 text-[15px] leading-relaxed text-[#F4F5F7]/75">
+            La orden validada entra a tu sistema de caja actual (Saint, Profit, Valery, Odoo) con número de factura fiscal o comanda y se imprime en cocina. El inventario se descuenta y nadie digita a mano.
+          </p>
+
+          <div class="mt-4 flex items-center gap-2 text-[13px] text-[#26C281] font-medium">
+            <span>Integración llave en mano incluida</span>
+            <Check class="h-4 w-4" />
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Right Column: Sticky UI Mockup Container -->
+      <div class="lg:col-span-7 lg:sticky lg:top-28">
+        <div class="rounded-[28px] border border-white/12 bg-[#091E36] p-6 lg:p-8 shadow-2xl relative overflow-hidden min-h-[460px] flex items-center justify-center">
+          
+          <!-- Mockup Stage 1: WhatsApp Chat Simulation -->
+          <div id="stage-panel-1" class="stage-panel w-full transition-all duration-500 block opacity-100 transform-none">
+            <div class="rounded-2xl border border-white/10 bg-[#071527] p-5 shadow-lg">
+              
+              <div class="flex items-center justify-between pb-3 border-b border-white/10">
+                <div class="flex items-center gap-2.5">
+                  <div class="flex h-9 w-9 items-center justify-center rounded-full bg-[#0FA968] text-white">
+                    <MessageSquare class="h-4 w-4" />
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium text-white">Agente Precyza (WhatsApp)</p>
+                    <p class="text-xs text-[#26C281]">Responde al instante · En línea</p>
+                  </div>
+                </div>
+                <span class="rounded-full bg-[#0FA968]/20 px-2.5 py-0.5 text-xs text-[#26C281] font-medium">
+                  Delivery Activo
+                </span>
+              </div>
+
+              <div class="my-5 space-y-3 text-[13px]">
+                <div class="max-w-[85%] rounded-2xl rounded-tl-xs bg-white/10 p-3.5 text-white shadow-xs">
+                  Hola, quiero pedir para delivery: 2 Hamburguesas Especiales (una sin cebolla y con papas rústicas) y 1 refresco.
+                </div>
+
+                <div class="ml-auto max-w-[90%] rounded-2xl rounded-tr-xs bg-[#0FA968] p-3.5 text-white shadow-md">
+                  ¡Con gusto! Pedido tomado:<br />
+                  • 2x Hamburguesas Especiales (1 sin cebolla, papas rústicas)<br />
+                  • 1x Refresco<br />
+                  <div class="mt-2 pt-2 border-t border-white/20 text-xs font-semibold tabular-nums">
+                    Total: $24.00 (960.00 Bs tasa BCV).<br />
+                    Pago Móvil: 0102 0414-0000000 RIF J-123456789.
+                  </div>
+                </div>
+
+                <div class="max-w-[85%] rounded-2xl rounded-tl-xs bg-white/10 p-3 text-white tabular-nums">
+                  Listo, pagado de Mercantil. Ref: <strong>781920</strong>
+                </div>
+              </div>
+
+              <div class="rounded-xl bg-white/5 p-3 text-center text-xs text-white/70 border border-white/5">
+                Paso 1: Conversación fluida, modificadores exactos y cálculo oficial BCV
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Mockup Stage 2: Direct Banking Verification -->
+          <div id="stage-panel-2" class="stage-panel w-full transition-all duration-500 hidden opacity-0 translate-y-4">
+            <div class="rounded-2xl border border-white/10 bg-[#071527] p-6 shadow-lg">
+              
+              <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                <div class="flex items-center gap-2.5">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-warp-emerald text-white">
+                    <ShieldCheck class="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium text-white">Verificación Bancaria en Tiempo Real</p>
+                    <p class="text-xs text-white/60">Consulta API sin custodia (BYOG)</p>
+                  </div>
+                </div>
+                <span class="rounded-full bg-[#0FA968]/20 px-3 py-1 text-xs text-[#26C281] font-medium animate-pulse">
+                  Verificado 1.8s
+                </span>
+              </div>
+
+              <div class="my-6 rounded-2xl border border-white/10 bg-white/5 p-5 space-y-3">
+                <div class="flex justify-between text-xs text-white/70">
+                  <span>Banco Emisor</span>
+                  <span class="font-medium text-white">Banco Mercantil</span>
+                </div>
+                <div class="flex justify-between text-xs text-white/70">
+                  <span>Referencia recibida en WhatsApp</span>
+                  <span class="font-mono font-medium text-[#26C281]">781920</span>
+                </div>
+                <div class="flex justify-between text-xs text-white/70">
+                  <span>Monto acreditado en cuenta</span>
+                  <span class="font-medium text-white tabular-nums">960.00 Bs (Exacto)</span>
+                </div>
+
+                <div class="mt-4 flex items-center gap-3 rounded-xl bg-[#0FA968]/15 border border-[#0FA968]/30 p-3.5 text-xs text-white">
+                  <CheckCircle2 class="h-5 w-5 text-[#26C281] shrink-0" />
+                  <span>Fondos confirmados en la cuenta bancaria del restaurante. Cero riesgo de comprobante falso.</span>
+                </div>
+              </div>
+
+              <div class="rounded-xl bg-white/5 p-3 text-center text-xs text-white/70 border border-white/5">
+                Paso 2: Validación automática contra tu banco sin usar celulares personales
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Mockup Stage 3: POS Injection & Kitchen Printing -->
+          <div id="stage-panel-3" class="stage-panel w-full transition-all duration-500 hidden opacity-0 translate-y-4">
+            <div class="rounded-2xl border border-white/10 bg-[#071527] p-6 shadow-lg">
+              
+              <div class="flex items-center justify-between pb-4 border-b border-white/10">
+                <div class="flex items-center gap-2.5">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-warp-orange text-white">
+                    <Cpu class="h-5 w-5" />
+                  </div>
+                  <div>
+                    <p class="text-sm font-medium text-white">Inyección al Sistema de Caja</p>
+                    <p class="text-xs text-white/60">Saint · Profit · Valery · Odoo</p>
+                  </div>
+                </div>
+                <span class="rounded-full bg-[#0FA968] px-3 py-1 text-xs text-white font-medium">
+                  Comanda Pagada
+                </span>
+              </div>
+
+              <div class="my-6 rounded-2xl border border-white/10 bg-white/5 p-5 space-y-3 font-mono">
+                <div class="flex justify-between text-xs text-white/80 border-b border-white/10 pb-2">
+                  <span>COMANDA #4082 [DELIVERY]</span>
+                  <span class="text-[#26C281]">AUTORIZADO</span>
+                </div>
+
+                <ul class="space-y-1.5 text-xs text-white/90">
+                  <li class="flex justify-between">
+                    <span>2x Hmb Especial (1 sin cebolla, rusticas)</span>
+                    <span>$20.00</span>
+                  </li>
+                  <li class="flex justify-between">
+                    <span>1x Refresco Lata</span>
+                    <span>$2.00</span>
+                  </li>
+                  <li class="flex justify-between text-white/60">
+                    <span>1x Tarifa Delivery Zona 1</span>
+                    <span>$2.00</span>
+                  </li>
+                </ul>
+
+                <div class="mt-3 pt-3 border-t border-white/10 flex justify-between text-xs font-bold text-white">
+                  <span>TOTAL FACTURADO</span>
+                  <span class="text-[#26C281]">$24.00 (960.00 Bs)</span>
+                </div>
+              </div>
+
+              <div class="rounded-xl bg-white/5 p-3 text-center text-xs text-white/70 border border-white/5">
+                Paso 3: Venta registrada en caja, stock descontado e impresa en cocina
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+  function setupStickyStory() {
+    const triggers = document.querySelectorAll('.step-card');
+    const panels = {
+      1: document.getElementById('stage-panel-1'),
+      2: document.getElementById('stage-panel-2'),
+      3: document.getElementById('stage-panel-3'),
+    };
+
+    function activateStep(stepNum: number) {
+      triggers.forEach((trigger) => {
+        const num = Number(trigger.getAttribute('data-step'));
+        const badge = trigger.querySelector('.step-badge');
+        const title = trigger.querySelector('.step-title');
+
+        if (num === stepNum) {
+          trigger.classList.remove('opacity-50');
+          trigger.classList.add('opacity-100');
+          if (badge) {
+            badge.classList.remove('bg-white/20');
+            badge.classList.add('bg-[#0FA968]', 'shadow-[0_0_15px_rgba(15,169,104,0.4)]');
+          }
+        } else {
+          trigger.classList.remove('opacity-100');
+          trigger.classList.add('opacity-50');
+          if (badge) {
+            badge.classList.remove('bg-[#0FA968]', 'shadow-[0_0_15px_rgba(15,169,104,0.4)]');
+            badge.classList.add('bg-white/20');
+          }
+        }
+      });
+
+      // Switch panels with smooth fade
+      Object.entries(panels).forEach(([key, panel]) => {
+        if (!panel) return;
+        if (Number(key) === stepNum) {
+          panel.classList.remove('hidden', 'opacity-0', 'translate-y-4');
+          panel.classList.add('block', 'opacity-100', 'translate-y-0');
+        } else {
+          panel.classList.remove('block', 'opacity-100', 'translate-y-0');
+          panel.classList.add('hidden', 'opacity-0', 'translate-y-4');
+        }
+      });
+    }
+
+    // Click handler for direct navigation
+    triggers.forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const step = Number(trigger.getAttribute('data-step'));
+        activateStep(step);
+      });
+    });
+
+    // IntersectionObserver for auto scroll activation
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const step = Number(entry.target.getAttribute('data-step'));
+              if (step) activateStep(step);
+            }
+          });
+        },
+        {
+          rootMargin: '-20% 0px -40% 0px',
+          threshold: 0.5,
+        }
+      );
+
+      triggers.forEach((t) => observer.observe(t));
+    }
+  }
+
+  // Run on load and after view transitions
+  setupStickyStory();
+  document.addEventListener('astro:after-swap', setupStickyStory);
+</script>

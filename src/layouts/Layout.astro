@@ -7,13 +7,13 @@ interface Props {
 }
 
 const {
-  title = 'Precyza — Agente de WhatsApp, Validación de Pago Móvil y Conexión POS/ERP',
-  description = 'Automatiza la toma de pedidos en tu restaurante, valida el Pago Móvil directamente en tu banco y envía la comanda directo a tu sistema de caja actual.'
+  title = 'Precyza — El nuevo estándar en delivery y pick up es WhatsApp + tu POS',
+  description = 'Toma de pedidos conversacional en segundos, validación de Pago Móvil en tu banco al instante y comanda directa a cocina sin tocar una sola tecla.'
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es" class="scroll-smooth">
+<html lang="es" class="scroll-smooth bg-[#050D17]">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -29,7 +29,17 @@ const {
       rel="stylesheet"
     />
   </head>
-  <body class="min-h-screen bg-[#F4F5F7] text-[#2B2D33] antialiased selection:bg-[#0FA968] selection:text-white">
-    <slot />
+  <body class="min-h-screen bg-[#050D17] text-[#2B2D33] antialiased selection:bg-[#0FA968] selection:text-white py-0 md:py-6 lg:py-10 px-0 md:px-6 lg:px-8">
+    <!-- Ambient glowing aura behind the main floating canvas (Inspired by HackerRank reference) -->
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+      <div class="absolute -top-32 left-1/2 -translate-x-1/2 w-[1200px] h-[550px] bg-[radial-gradient(ellipse_at_center,rgba(15,169,104,0.35)_0%,rgba(11,37,69,0.25)_45%,transparent_75%)] blur-3xl"></div>
+      <div class="absolute top-1/3 -left-40 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(15,169,104,0.2)_0%,transparent_60%)] blur-3xl"></div>
+      <div class="absolute top-2/3 -right-40 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(38,194,129,0.18)_0%,transparent_60%)] blur-3xl"></div>
+    </div>
+
+    <!-- Main Floating Canvas Container (The Viewport Window from HackerRank) -->
+    <div class="relative z-10 mx-auto max-w-[1360px] overflow-hidden rounded-none md:rounded-[36px] lg:rounded-[44px] border-0 md:border md:border-white/12 bg-[#071527] shadow-[0_20px_100px_rgba(0,0,0,0.8),0_0_80px_rgba(15,169,104,0.15)]">
+      <slot />
+    </div>
   </body>
 </html>

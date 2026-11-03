@@ -2,22 +2,24 @@
 import Layout from '../layouts/Layout.astro';
 import Navbar from '../components/Navbar.astro';
 import Hero from '../components/Hero.astro';
+import ModalitiesSheet from '../components/ModalitiesSheet.astro';
+import StickyStoryFlow from '../components/StickyStoryFlow.astro';
 import UnboxedMetrics from '../components/UnboxedMetrics.astro';
-import TheThreePillars from '../components/TheThreePillars.astro';
 import Comparison from '../components/Comparison.astro';
 import PilotSection from '../components/PilotSection.astro';
 import Footer from '../components/Footer.astro';
 ---
 
 <Layout
-  title="Precyza — Agente de WhatsApp, Validación de Pago Móvil y Conexión POS/ERP"
-  description="Automatiza la toma de pedidos por WhatsApp, valida el Pago Móvil directamente en tus cuentas de banco e inyecta la comanda en tu ERP/POS actual sin digitación manual."
+  title="Precyza — El nuevo estándar en delivery y pick up es WhatsApp + tu POS"
+  description="Toma de pedidos conversacional en segundos, validación de Pago Móvil en tu banco al instante y comanda directa a cocina sin tocar una sola tecla."
 >
   <Navbar />
   <main>
     <Hero />
+    <ModalitiesSheet />
+    <StickyStoryFlow />
     <UnboxedMetrics />
-    <TheThreePillars />
     <Comparison />
     <PilotSection />
   </main>
