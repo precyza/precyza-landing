@@ -1,0 +1,176 @@
+---
+import { MessageSquare, ShieldCheck, Cpu, ArrowRight, CheckCircle2, Zap } from '@lucide/astro';
+---
+
+<section class="relative overflow-hidden pt-12 pb-20 md:pt-20 md:pb-28">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <!-- Top Value & CTA Block -->
+    <div class="mx-auto max-w-4xl text-center">
+      <h1 class="text-4xl font-normal tracking-tight text-[#0B2545] sm:text-6xl md:leading-[1.12]">
+        Tu Agente de WhatsApp que toma pedidos, valida el Pago Móvil en tu banco y lo envía directo a tu POS.
+      </h1>
+
+      <p class="mx-auto mt-7 max-w-2xl text-lg leading-relaxed text-[#5C616B]">
+        Atiende a tus clientes en segundos sin colapsar el chat. Verifica el abono real en tu cuenta bancaria a prueba de capturas falsas e inyecta la comanda facturada en tu sistema de caja actual sin transcripción manual.
+      </p>
+
+      <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+        <a
+          href="#piloto"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-warp-emerald px-8 py-3.5 text-[15px] font-medium text-white shadow-[0_4px_14px_rgba(15,169,104,0.28)] transition-transform hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0FA968]"
+        >
+          <span>Postular mi restaurante al Piloto (10 cupos)</span>
+          <ArrowRight class="h-4 w-4" />
+        </a>
+
+        <a
+          href="#como-funciona"
+          class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-[#0B2545]/15 bg-white px-7 py-3.5 text-[15px] font-medium text-[#0B2545] shadow-xs transition-colors hover:bg-[#F4F5F7]"
+        >
+          <span>Ver cómo se conecta</span>
+        </a>
+      </div>
+
+      <!-- Live Pilot availability indicator -->
+      <div class="mt-6 inline-flex items-center gap-2 text-[13px] text-[#5C616B]">
+        <span class="inline-block h-2 w-2 rounded-full bg-[#0FA968] animate-pulse"></span>
+        <span>Programa piloto exclusivo para Venezuela · <strong>Quedan 10 cupos disponibles</strong></span>
+      </div>
+    </div>
+
+    <!-- Interactive Flow Diagram: WhatsApp -> Bank Verification -> POS Injection -->
+    <div class="mt-16 rounded-[24px] border border-[#0B2545]/8 bg-white p-6 shadow-[0_2px_16px_rgba(11,37,69,0.06)] lg:p-8">
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 items-stretch">
+        
+        <!-- Step 1: WhatsApp Conversation -->
+        <div class="flex flex-col justify-between rounded-[20px] bg-[#F4F5F7] p-5 border border-[#0B2545]/6">
+          <div class="flex items-center justify-between pb-3 border-b border-[#0B2545]/8">
+            <div class="flex items-center gap-2.5">
+              <div class="flex h-9 w-9 items-center justify-center rounded-full bg-[#0FA968] text-white">
+                <MessageSquare class="h-4 w-4" />
+              </div>
+              <div>
+                <p class="text-[13px] font-medium text-[#0B2545]">Agente Precyza</p>
+                <p class="text-[11px] text-[#0FA968]">En línea · Responde en 2 seg</p>
+              </div>
+            </div>
+            <span class="text-[11px] font-medium text-[#5C616B]">WhatsApp</span>
+          </div>
+
+          <div class="my-4 space-y-2.5 text-[13px]">
+            <!-- Customer Bubble -->
+            <div class="max-w-[85%] rounded-2xl rounded-tl-xs bg-white p-3 text-[#2B2D33] shadow-xs">
+              Hola, quiero 2 Hamburguesas Especiales, una sin cebolla, y una ración de tequeños.
+            </div>
+
+            <!-- Agent Bubble -->
+            <div class="ml-auto max-w-[90%] rounded-2xl rounded-tr-xs bg-[#0B2545] p-3 text-white">
+              ¡Entendido! Registrado: 2 Especiales (1 sin cebolla) + 1 Tequeños.<br />
+              <div class="mt-2 pt-2 border-t border-white/15 text-[12px] tabular-nums">
+                Total: <strong>$28.50</strong> (1,140.00 Bs tasa BCV).<br />
+                Pagas por Pago Móvil al: 0102 0414-0000000 RIF J-123456789.
+              </div>
+            </div>
+
+            <!-- Customer Reference Bubble -->
+            <div class="max-w-[85%] rounded-2xl rounded-tl-xs bg-white p-3 text-[#2B2D33] shadow-xs tabular-nums">
+              Listo, pagado. Ref: <strong>948201</strong> de Banesco.
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-white/80 p-2.5 text-center text-[12px] text-[#5C616B]">
+            Paso 1: Toma del pedido y cálculo exacto multimoneda
+          </div>
+        </div>
+
+        <!-- Step 2: Instant Bank Verification -->
+        <div class="flex flex-col justify-between rounded-[20px] bg-[#F4F5F7] p-5 border border-[#0B2545]/6">
+          <div class="flex items-center justify-between pb-3 border-b border-[#0B2545]/8">
+            <div class="flex items-center gap-2.5">
+              <div class="flex h-9 w-9 items-center justify-center rounded-full bg-[#0B2545] text-white">
+                <ShieldCheck class="h-4 w-4" />
+              </div>
+              <div>
+                <p class="text-[13px] font-medium text-[#0B2545]">Verificación Bancaria</p>
+                <p class="text-[11px] text-[#5C616B]">Consulta API directa al banco</p>
+              </div>
+            </div>
+            <span class="rounded-full bg-[#0FA968]/15 px-2 py-0.5 text-[11px] font-medium text-[#0C8E57]">
+              Cero capturas
+            </span>
+          </div>
+
+          <div class="my-auto py-4 space-y-3">
+            <div class="rounded-2xl border border-[#0B2545]/8 bg-white p-4 shadow-xs">
+              <div class="flex items-center justify-between text-[12px] text-[#5C616B]">
+                <span>Banco Emisor</span>
+                <span class="font-medium text-[#0B2545]">Banesco</span>
+              </div>
+              <div class="mt-1 flex items-center justify-between text-[12px] text-[#5C616B]">
+                <span>Referencia recibida</span>
+                <span class="font-mono font-medium text-[#0B2545]">948201</span>
+              </div>
+              <div class="mt-1 flex items-center justify-between text-[12px] text-[#5C616B]">
+                <span>Monto en cuenta</span>
+                <span class="font-medium text-[#0FA968] tabular-nums">1,140.00 Bs (Exacto)</span>
+              </div>
+
+              <div class="mt-3 flex items-center gap-2 rounded-lg bg-[#E6F8F0] p-2.5 text-[12px] font-medium text-[#064E30]">
+                <CheckCircle2 class="h-4 w-4 shrink-0 text-[#0FA968]" />
+                <span>Fondos confirmados en 1.8s. Comprobante validado contra API bancaria.</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-white/80 p-2.5 text-center text-[12px] text-[#5C616B]">
+            Paso 2: Validación automática sin mirar el celular personal
+          </div>
+        </div>
+
+        <!-- Step 3: Injection into Restaurant POS -->
+        <div class="flex flex-col justify-between rounded-[20px] bg-[#F4F5F7] p-5 border border-[#0B2545]/6">
+          <div class="flex items-center justify-between pb-3 border-b border-[#0B2545]/8">
+            <div class="flex items-center gap-2.5">
+              <div class="flex h-9 w-9 items-center justify-center rounded-full bg-warp-orange text-white">
+                <Cpu class="h-4 w-4" />
+              </div>
+              <div>
+                <p class="text-[13px] font-medium text-[#0B2545]">Conexión con tu POS</p>
+                <p class="text-[11px] text-[#5C616B]">Saint · Profit · Valery · Odoo</p>
+              </div>
+            </div>
+            <span class="text-[11px] font-medium text-[#D9622B]">Automático</span>
+          </div>
+
+          <div class="my-auto py-4 space-y-3">
+            <div class="rounded-2xl border border-[#0B2545]/8 bg-white p-4 shadow-xs">
+              <div class="flex items-center justify-between border-b border-[#0B2545]/8 pb-2">
+                <span class="text-[12px] font-semibold text-[#0B2545]">Comanda #4082 (Delivery)</span>
+                <span class="rounded bg-[#0B2545] px-2 py-0.5 text-[10px] font-medium text-white">PAGADA</span>
+              </div>
+              <ul class="mt-2 space-y-1 text-[12px] text-[#2B2D33]">
+                <li class="flex justify-between">
+                  <span>2x Hamburguesa Especial (1 sin cebolla)</span>
+                  <span class="tabular-nums font-medium">$22.00</span>
+                </li>
+                <li class="flex justify-between">
+                  <span>1x Ración de Tequeños</span>
+                  <span class="tabular-nums font-medium">$6.50</span>
+                </li>
+              </ul>
+              <div class="mt-3 flex items-center justify-between border-t border-[#0B2545]/8 pt-2 text-[11px] text-[#5C616B]">
+                <span>Inyectado al sistema de caja</span>
+                <span class="text-[#0FA968] font-medium">Impreso en cocina</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="rounded-xl bg-white/80 p-2.5 text-center text-[12px] text-[#5C616B]">
+            Paso 3: Cero tipeo manual. Pedido listo para preparar
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

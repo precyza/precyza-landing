@@ -1,0 +1,223 @@
+---
+import { Check, Sparkles, Shield, Users, ArrowRight } from '@lucide/astro';
+---
+
+<section id="piloto" class="py-20 lg:py-28 bg-[#0B2545] text-white relative overflow-hidden">
+  <!-- Subtle background glow -->
+  <div class="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-[#0FA968]/20 blur-3xl pointer-events-none"></div>
+  <div class="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#D9622B]/15 blur-3xl pointer-events-none"></div>
+
+  <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      
+      <!-- Left Column: Pilot Value Proposition -->
+      <div class="lg:col-span-6">
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-medium text-[#0FA968] backdrop-blur-xs">
+          <span class="inline-block h-2 w-2 rounded-full bg-[#0FA968] animate-pulse"></span>
+          Convocatoria Abierta · Solo 10 Plazas
+        </div>
+
+        <h2 class="mt-6 text-3xl font-normal tracking-tight text-white sm:text-5xl">
+          Programa Piloto Fundadores para los primeros 10 restaurantes
+        </h2>
+
+        <p class="mt-4 text-base text-[#F4F5F7]/80 leading-relaxed">
+          Buscamos 10 marcas gastronómicas en Venezuela con alto volumen de pedidos por WhatsApp que quieran erradicar el caos de caja y automatizar su operación sin cambiar de ERP.
+        </p>
+
+        <div class="mt-8 space-y-4">
+          <div class="flex items-start gap-3.5">
+            <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0FA968] text-[#0B2545]">
+              <Check class="h-4 w-4 stroke-[3]" />
+            </div>
+            <div>
+              <h3 class="text-[15px] font-medium text-white">Integración técnica llave en mano con tu ERP/POS</h3>
+              <p class="text-[13px] text-[#F4F5F7]/70">Nos encargamos de toda la configuración para que el agente inyecte las comandas directamente en tu sistema actual sin costo de setup.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3.5">
+            <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0FA968] text-[#0B2545]">
+              <Check class="h-4 w-4 stroke-[3]" />
+            </div>
+            <div>
+              <h3 class="text-[15px] font-medium text-white">Carga y entrenamiento de tu menú completo</h3>
+              <p class="text-[13px] text-[#F4F5F7]/70">Configuramos variantes, combos, preguntas frecuentes y reglas de preparación para que el agente responda con la voz de tu marca.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3.5">
+            <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0FA968] text-[#0B2545]">
+              <Check class="h-4 w-4 stroke-[3]" />
+            </div>
+            <div>
+              <h3 class="text-[15px] font-medium text-white">Conexión de validación bancaria para Pago Móvil</h3>
+              <p class="text-[13px] text-[#F4F5F7]/70">Conectamos la verificación directa con tus cuentas de banco para eliminar de raíz los captures falsificados.</p>
+            </div>
+          </div>
+
+          <div class="flex items-start gap-3.5">
+            <div class="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-[#0FA968] text-[#0B2545]">
+              <Check class="h-4 w-4 stroke-[3]" />
+            </div>
+            <div>
+              <h3 class="text-[15px] font-medium text-white">Canal VIP con fundadores y tarifa congelada de por vida</h3>
+              <p class="text-[13px] text-[#F4F5F7]/70">Acceso directo por WhatsApp con nuestro equipo de arquitectura y un precio preferencial vitalicio garantizado por escrito.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8 rounded-2xl bg-white/5 border border-white/10 p-4 text-[12px] text-[#F4F5F7]/70 flex items-center gap-3">
+          <Shield class="h-5 w-5 shrink-0 text-[#0FA968]" />
+          <span>Sin compromisos de permanencia. Evaluaremos la compatibilidad técnica de tu sistema y te responderemos en menos de 24 horas.</span>
+        </div>
+      </div>
+
+      <!-- Right Column: Lead Capture Form -->
+      <div class="lg:col-span-6">
+        <div class="rounded-[24px] bg-white p-7 lg:p-9 text-[#2B2D33] shadow-2xl">
+          <div class="border-b border-[#0B2545]/8 pb-4">
+            <h3 class="text-2xl font-normal text-[#0B2545]">Postula tu restaurante</h3>
+            <p class="mt-1 text-[13px] text-[#5C616B]">Completa tus datos para agendar la llamada técnica de diagnóstico.</p>
+          </div>
+
+          <form id="pilot-form" class="mt-6 space-y-4">
+            <div>
+              <label for="lead-name" class="block text-[13px] font-medium text-[#2B2D33]">Nombre y Apellido</label>
+              <input
+                type="text"
+                id="lead-name"
+                name="name"
+                required
+                placeholder="Ej. Carlos Mendoza"
+                class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] placeholder-[#5C616B]/60 focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all"
+              />
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="restaurant-name" class="block text-[13px] font-medium text-[#2B2D33]">Nombre del Restaurante</label>
+                <input
+                  type="text"
+                  id="restaurant-name"
+                  name="restaurant"
+                  required
+                  placeholder="Ej. Burger Station"
+                  class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] placeholder-[#5C616B]/60 focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all"
+                />
+              </div>
+
+              <div>
+                <label for="city" class="block text-[13px] font-medium text-[#2B2D33]">Ciudad</label>
+                <input
+                  type="text"
+                  id="city"
+                  name="city"
+                  required
+                  placeholder="Ej. Caracas, Valencia..."
+                  class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] placeholder-[#5C616B]/60 focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all"
+                />
+              </div>
+            </div>
+
+            <div>
+              <label for="whatsapp" class="block text-[13px] font-medium text-[#2B2D33]">Teléfono WhatsApp de contacto</label>
+              <input
+                type="tel"
+                id="whatsapp"
+                name="whatsapp"
+                required
+                placeholder="Ej. +58 412 1234567"
+                class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] placeholder-[#5C616B]/60 focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all"
+              />
+            </div>
+
+            <div>
+              <label for="pos-system" class="block text-[13px] font-medium text-[#2B2D33]">¿Qué sistema de caja / POS o ERP usan actualmente?</label>
+              <select
+                id="pos-system"
+                name="pos_system"
+                required
+                class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all"
+              >
+                <option value="" disabled selected>Selecciona una opción...</option>
+                <option value="Saint Enterprise">Saint Enterprise POS</option>
+                <option value="Profit Plus">Profit Plus</option>
+                <option value="Valery Software">Valery Software</option>
+                <option value="Odoo">Odoo ERP</option>
+                <option value="Stellar POS">Stellar POS</option>
+                <option value="Software Propio">Software Propio / Base de Datos SQL</option>
+                <option value="Otro">Otro sistema (especificar en la llamada)</option>
+                <option value="Ninguno">No usamos sistema formal todavía</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="volume" class="block text-[13px] font-medium text-[#2B2D33]">Volumen estimado de pedidos diarios por WhatsApp</label>
+              <select
+                id="volume"
+                name="volume"
+                required
+                class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all"
+              >
+                <option value="" disabled selected>Selecciona rango de pedidos...</option>
+                <option value="Menos de 20">Menos de 20 pedidos / día</option>
+                <option value="20 a 50">20 a 50 pedidos / día</option>
+                <option value="50 a 100">50 a 100 pedidos / día</option>
+                <option value="Más de 100">Más de 100 pedidos / día</option>
+              </select>
+            </div>
+
+            <button
+              type="submit"
+              class="w-full mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-warp-emerald py-3.5 text-[15px] font-medium text-white shadow-[0_4px_14px_rgba(15,169,104,0.32)] transition-transform hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0FA968] cursor-pointer"
+            >
+              <span>Postular mi Restaurante (10 cupos)</span>
+              <ArrowRight class="h-4 w-4" />
+            </button>
+
+            <p class="text-center text-[11px] text-[#5C616B] mt-3">
+              Tus datos están protegidos. Nos comunicaremos directamente vía WhatsApp en menos de 24 horas.
+            </p>
+          </form>
+
+          <!-- Success Message State (Hidden by default) -->
+          <div id="form-success" class="hidden mt-6 text-center py-8 space-y-3">
+            <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E6F8F0] text-[#0FA968]">
+              <Check class="h-8 w-8 stroke-[2.5]" />
+            </div>
+            <h4 class="text-xl font-normal text-[#0B2545]">¡Postulación recibida con éxito!</h4>
+            <p class="text-[14px] text-[#5C616B] max-w-sm mx-auto">
+              Hemos registrado los datos de tu restaurante. Un arquitecto del equipo fundador de Precyza te escribirá directamente a tu WhatsApp para coordinar el diagnóstico técnico.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('pilot-form') as HTMLFormElement;
+  const successBlock = document.getElementById('form-success');
+
+  if (form && successBlock) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      // Store in localStorage as backup lead record
+      const formData = new FormData(form);
+      const leadData = Object.fromEntries(formData.entries());
+      try {
+        const existing = JSON.parse(localStorage.getItem('precyza_pilot_leads') || '[]');
+        existing.push({ ...leadData, date: new Date().toISOString() });
+        localStorage.setItem('precyza_pilot_leads', JSON.stringify(existing));
+      } catch (err) {
+        console.error('Error saving lead locally', err);
+      }
+
+      form.classList.add('hidden');
+      successBlock.classList.remove('hidden');
+    });
+  }
+</script>

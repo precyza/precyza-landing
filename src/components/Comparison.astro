@@ -1,0 +1,96 @@
+---
+import { XCircle, CheckCircle2 } from '@lucide/astro';
+---
+
+<section id="comparativa" class="py-20 bg-[#F4F5F7] border-t border-[#0B2545]/8">
+  <div class="mx-auto max-w-7xl px-6 lg:px-8">
+    <div class="mx-auto max-w-3xl text-center">
+      <h2 class="text-3xl font-normal tracking-tight text-[#0B2545] sm:text-5xl">
+        La diferencia entre perder ventas y escalar tu delivery
+      </h2>
+      <p class="mt-4 text-base sm:text-lg text-[#5C616B]">
+        Compara la carga operativa de atender pedidos hoy contra un flujo automatizado de alta precisión.
+      </p>
+    </div>
+
+    <div class="mt-14 grid grid-cols-1 md:grid-cols-2 gap-8">
+      
+      <!-- Current Chaos Card -->
+      <div class="rounded-[24px] border border-red-200/80 bg-white p-7 lg:p-9 shadow-xs">
+        <div class="flex items-center gap-3 pb-4 border-b border-[#0B2545]/8">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-red-100 text-red-600">
+            <XCircle class="h-5 w-5" />
+          </div>
+          <div>
+            <h3 class="text-xl font-normal text-[#0B2545]">El cuello de botella actual</h3>
+            <p class="text-[12px] text-[#5C616B]">Operación manual propensa a errores y demoras</p>
+          </div>
+        </div>
+
+        <ul class="mt-6 space-y-4 text-[14px] text-[#2B2D33]">
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-red-500 font-bold shrink-0">✕</span>
+            <span><strong>Demoras de 15 a 30 minutos</strong> para responder en horas pico, provocando que los clientes se vayan a la competencia.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-red-500 font-bold shrink-0">✕</span>
+            <span><strong>Cajero revisando el celular personal</strong> para verificar si el Pago Móvil cayó, interrumpiendo la atención en el mostrador.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-red-500 font-bold shrink-0">✕</span>
+            <span><strong>Vulnerabilidad a capturas falsas</strong> generadas con plantillas o aplicaciones que simulan la interfaz bancaria.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-red-500 font-bold shrink-0">✕</span>
+            <span><strong>Doble trabajo y digitación manual</strong>: alguien debe copiar a mano lo que pidió el cliente en el sistema de facturación.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-red-500 font-bold shrink-0">✕</span>
+            <span><strong>Descuadres al final del día</strong> entre los comprobantes del chat, el reporte del banco y el arqueo del sistema de caja.</span>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Precyza Flow Card -->
+      <div class="rounded-[24px] border border-[#0FA968]/30 bg-white p-7 lg:p-9 shadow-sm relative overflow-hidden">
+        <div class="absolute top-0 right-0 rounded-bl-xl bg-[#0FA968] px-3 py-1 text-[11px] font-medium text-white">
+          Flujo Precyza
+        </div>
+
+        <div class="flex items-center gap-3 pb-4 border-b border-[#0B2545]/8">
+          <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-[#E6F8F0] text-[#0FA968]">
+            <CheckCircle2 class="h-5 w-5" />
+          </div>
+          <div>
+            <h3 class="text-xl font-normal text-[#0B2545]">Operación automatizada y blindada</h3>
+            <p class="text-[12px] text-[#0C8E57]">Fluidez, seguridad bancaria e inyección directa</p>
+          </div>
+        </div>
+
+        <ul class="mt-6 space-y-4 text-[14px] text-[#2B2D33]">
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-[#0FA968] font-bold shrink-0">✓</span>
+            <span><strong>Respuesta inmediata en &lt; 2 segundos</strong>, guiando al cliente amablemente por el menú sin perder ni una sola venta.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-[#0FA968] font-bold shrink-0">✓</span>
+            <span><strong>Consulta automática al banco</strong>: el sistema verifica la referencia directamente contra la API de tus cuentas bancarias.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-[#0FA968] font-bold shrink-0">✓</span>
+            <span><strong>100% de protección contra fraudes</strong>: si el dinero no está acreditado en tu cuenta, el pedido no se envía a preparación.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-[#0FA968] font-bold shrink-0">✓</span>
+            <span><strong>Inyección directa a tu POS/ERP actual</strong>: comanda emitida e impresa en cocina sin que nadie tenga que teclear nada.</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="mt-0.5 text-[#0FA968] font-bold shrink-0">✓</span>
+            <span><strong>Conciliación exacta</strong>: cada bolívar facturado tiene su referencia bancaria unívoca asociada en tu sistema.</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>

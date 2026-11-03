@@ -1,1 +1,45 @@
 @import "tailwindcss";
+
+@theme {
+  --color-brand-navy: #0B2545;
+  --color-brand-navy-light: #133966;
+  --color-brand-emerald: #0FA968;
+  --color-brand-emerald-light: #26C281;
+  --color-brand-emerald-dark: #0C8E57;
+  --color-brand-orange: #D9622B;
+  --color-brand-orange-light: #E58051;
+  --color-neutral-canvas: #F4F5F7;
+  --color-neutral-charcoal: #2B2D33;
+  --color-neutral-muted: #5C616B;
+  --color-neutral-white: #FFFFFF;
+
+  --font-display: "Space Grotesk", system-ui, -apple-system, sans-serif;
+  --font-body: "Plus Jakarta Sans", system-ui, -apple-system, sans-serif;
+}
+
+/* Tabular figures for financial and metric clarity */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Subtle warp gradients (bounded strictly to focal elements per DESIGN.md) */
+.bg-warp-emerald {
+  background: radial-gradient(120% 140% at 15% 15%, #26C281 0%, #0FA968 52%, #0B2545 100%);
+}
+
+.bg-warp-orange {
+  background: radial-gradient(120% 140% at 20% 15%, #E58051 0%, #D9622B 60%, #853714 100%);
+}
+
+.bg-warp-navy {
+  background: radial-gradient(130% 140% at 90% 10%, rgba(217, 98, 43, 0.22) 0%, transparent 55%), radial-gradient(120% 120% at 10% 90%, #0FA968 0%, #0B2545 85%);
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+}
+
+h1, h2, h3, .font-display {
+  font-family: var(--font-display);
+}
