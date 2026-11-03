@@ -1,16 +1,32 @@
 ---
+import Layout from '../layouts/Layout.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout title="Precyza — Control Fiscal y ERP Inteligente">
+  <main class="flex min-h-screen flex-col items-center justify-center px-6 text-center">
+    <div class="inline-flex items-center gap-2 rounded-full border border-slate-800 bg-slate-900/60 px-4 py-1.5 text-xs font-medium text-slate-300 backdrop-blur-sm mb-6">
+      <span class="inline-block h-2 w-2 rounded-full bg-emerald-400 animate-pulse"></span>
+      Precyza Landing en desarrollo
+    </div>
+    <h1 class="max-w-3xl text-4xl font-extrabold tracking-tight sm:text-6xl text-white">
+      Auditoría Fiscal y Operaciones POS sin fricción
+    </h1>
+    <p class="mt-6 max-w-xl text-lg text-slate-400">
+      Control en tiempo real, conciliación y arquitectura segura diseñada para escalar.
+    </p>
+    <div class="mt-8 flex gap-4">
+      <a
+        href="#"
+        class="rounded-lg bg-indigo-600 px-5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 transition-colors"
+      >
+        Comenzar
+      </a>
+      <a
+        href="#"
+        class="rounded-lg border border-slate-800 bg-slate-900 px-5 py-2.5 text-sm font-semibold text-slate-300 hover:bg-slate-800 transition-colors"
+      >
+        Conocer más
+      </a>
+    </div>
+  </main>
+</Layout>
