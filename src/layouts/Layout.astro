@@ -7,7 +7,7 @@ interface Props {
 }
 
 const {
-  title = 'Precyza — El nuevo estándar en delivery y pick up es WhatsApp + tu POS',
+  title = 'Precyza',
   description = 'Toma de pedidos conversacional en segundos, validación de Pago Móvil en tu banco al instante y comanda directa a cocina sin tocar una sola tecla.'
 } = Astro.props;
 ---
@@ -17,6 +17,7 @@ const {
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     <link rel="icon" type="image/png" href="/brand/logo-mark-emerald.png" />
     <meta name="description" content={description} />
     <title>{title}</title>
