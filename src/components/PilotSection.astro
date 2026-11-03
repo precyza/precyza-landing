@@ -168,12 +168,15 @@ import { Check, Sparkles, Shield, Users, ArrowRight } from '@lucide/astro';
               </select>
             </div>
 
+            <div id="form-error" class="hidden text-xs text-red-600 bg-red-50 border border-red-200 rounded-lg p-2.5 mt-2"></div>
+
             <button
+              id="submit-btn"
               type="submit"
-              class="w-full mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-warp-emerald py-3.5 text-[15px] font-medium text-white shadow-[0_4px_14px_rgba(15,169,104,0.32)] transition-transform hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0FA968] cursor-pointer"
+              class="w-full mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-warp-emerald py-3.5 text-[15px] font-medium text-white shadow-[0_4px_14px_rgba(15,169,104,0.32)] transition-transform hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0FA968] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              <span>Postular mi Restaurante (10 cupos)</span>
-              <ArrowRight class="h-4 w-4" />
+              <span id="btn-text">Postular mi Restaurante (10 cupos)</span>
+              <ArrowRight id="btn-icon" class="h-4 w-4" />
             </button>
 
             <p class="text-center text-[11px] text-[#5C616B] mt-3">
@@ -188,7 +191,7 @@ import { Check, Sparkles, Shield, Users, ArrowRight } from '@lucide/astro';
             </div>
             <h4 class="text-xl font-normal text-[#0B2545]">¡Postulación recibida con éxito!</h4>
             <p class="text-[14px] text-[#5C616B] max-w-sm mx-auto">
-              Hemos registrado los datos de tu restaurante. Un arquitecto del equipo fundador de Precyza te escribirá directamente a tu WhatsApp para coordinar el diagnóstico técnico.
+              Hemos registrado los datos de tu restaurante y te enviamos la confirmación a nuestro canal de fundadores. Te escribiremos directamente a tu WhatsApp para coordinar el diagnóstico técnico.
             </p>
           </div>
         </div>
@@ -199,25 +202,61 @@ import { Check, Sparkles, Shield, Users, ArrowRight } from '@lucide/astro';
 </section>
 
 <script>
-  const form = document.getElementById('pilot-form') as HTMLFormElement;
-  const successBlock = document.getElementById('form-success');
+  function setupPilotForm() {
+    const form = document.getElementById('pilot-form') as HTMLFormElement;
+    const successBlock = document.getElementById('form-success');
+    const errorBlock = document.getElementById('form-error');
+    const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
+    const btnText = document.getElementById('btn-text');
 
-  if (form && successBlock) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      // Store in localStorage as backup lead record
-      const formData = new FormData(form);
-      const leadData = Object.fromEntries(formData.entries());
-      try {
-        const existing = JSON.parse(localStorage.getItem('precyza_pilot_leads') || '[]');
-        existing.push({ ...leadData, date: new Date().toISOString() });
-        localStorage.setItem('precyza_pilot_leads', JSON.stringify(existing));
-      } catch (err) {
-        console.error('Error saving lead locally', err);
-      }
+    if (form && successBlock) {
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        if (errorBlock) errorBlock.classList.add('hidden');
 
-      form.classList.add('hidden');
-      successBlock.classList.remove('hidden');
-    });
+        // Loading state
+        if (submitBtn) submitBtn.disabled = true;
+        if (btnText) btnText.textContent = 'Enviando postulación...';
+
+        const formData = new FormData(form);
+        const leadData = Object.fromEntries(formData.entries());
+
+        try {
+          // Backup locally in localStorage
+          try {
+            const existing = JSON.parse(localStorage.getItem('precyza_pilot_leads') || '[]');
+            existing.push({ ...leadData, date: new Date().toISOString() });
+            localStorage.setItem('precyza_pilot_leads', JSON.stringify(existing));
+          } catch (_) {}
+
+          // Send to Telegram backend API
+          const res = await fetch('/api/pilot-lead', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(leadData),
+          });
+
+          const result = await res.json();
+
+          if (!res.ok || !result.ok) {
+            throw new Error(result.error || 'No se pudo enviar la postulación. Intenta nuevamente.');
+          }
+
+          form.classList.add('hidden');
+          successBlock.classList.remove('hidden');
+        } catch (err: any) {
+          console.error('Submission error:', err);
+          if (errorBlock) {
+            errorBlock.textContent = err.message || 'Error de conexión al enviar el formulario.';
+            errorBlock.classList.remove('hidden');
+          }
+          if (submitBtn) submitBtn.disabled = false;
+          if (btnText) btnText.textContent = 'Postular mi Restaurante (10 cupos)';
+        }
+      });
+    }
   }
+
+  setupPilotForm();
+  document.addEventListener('astro:after-swap', setupPilotForm);
 </script>
