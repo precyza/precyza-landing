@@ -9,28 +9,39 @@ import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowRight } from
 
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     
-    <div class="mx-auto max-w-3xl text-center mb-16 lg:mb-24">
+    <div class="mx-auto max-w-3xl text-center mb-16 lg:mb-20">
       <h2 class="text-3xl sm:text-5xl font-normal tracking-tight text-white">
         Un flujo automatizado en 3 tiempos exactos
       </h2>
       <p class="mt-4 text-base sm:text-lg text-[#F4F5F7]/80">
-        De la conversación en WhatsApp a la comanda en cocina sin intervención manual.
+        Haz scroll para ver cómo un mensaje en WhatsApp se convierte en comida lista para despachar.
       </p>
     </div>
 
     <!-- Desktop: Two-Column Sticky Story / Mobile: Stacked -->
-    <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start relative">
       
-      <!-- Left Column: 3 Steps (Scroll triggers) -->
-      <div class="lg:col-span-5 space-y-12 lg:space-y-24">
+      <!-- Left Column: 3 Steps (Tall scroll triggers with breathing room) -->
+      <div class="lg:col-span-5 relative">
         
+        <!-- Subtle Left Connecting Progress Line on Desktop -->
+        <div class="hidden lg:block absolute left-4 top-12 bottom-24 w-0.5 bg-white/10 -z-0">
+          <div id="scroll-progress-line" class="w-full bg-[#0FA968] transition-all duration-300 h-[10%] shadow-[0_0_12px_rgba(15,169,104,0.8)]"></div>
+        </div>
+
         <!-- Step 1 Trigger -->
-        <div id="step-trigger-1" class="step-card group cursor-pointer transition-all duration-300 opacity-100" data-step="1">
+        <div
+          id="step-trigger-1"
+          class="step-card group cursor-pointer transition-all duration-500 opacity-100 min-h-[50vh] lg:min-h-[62vh] flex flex-col justify-center lg:pl-12 relative z-10"
+          data-step="1"
+        >
           <div class="flex items-center gap-3">
-            <span class="step-badge flex h-8 w-8 items-center justify-center rounded-full bg-[#0FA968] text-white text-xs font-semibold shadow-[0_0_15px_rgba(15,169,104,0.4)]">
+            <span class="step-badge flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#0FA968] text-white text-xs font-semibold shadow-[0_0_18px_rgba(15,169,104,0.6)] transition-all duration-300">
               01
             </span>
-            <span class="text-xs font-semibold tracking-wider text-[#26C281] uppercase">Paso Uno · WhatsApp</span>
+            <span class="step-tag text-xs font-semibold tracking-wider text-[#26C281] uppercase transition-colors">
+              Paso Uno · WhatsApp
+            </span>
           </div>
 
           <h3 class="step-title mt-4 text-2xl lg:text-3xl font-normal text-white group-hover:text-[#26C281] transition-colors">
@@ -38,7 +49,7 @@ import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowRight } from
           </h3>
 
           <p class="mt-3 text-[15px] leading-relaxed text-[#F4F5F7]/75">
-            El cliente escribe o envía notas de voz. El agente entiende ingredientes, platos agotados, notas de cocina ("sin cebolla", "papas extra") y calcula la cuenta exacta en dólares y Bolívares a la tasa oficial BCV.
+            El cliente escribe o envía notas de voz. El agente entiende ingredientes, platos agotados, notas de cocina ("sin cebolla", "papas rústicas") y calcula la cuenta exacta en dólares y Bolívares a la tasa oficial BCV.
           </p>
 
           <div class="mt-4 flex items-center gap-2 text-[13px] text-[#26C281] font-medium">
@@ -48,19 +59,25 @@ import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowRight } from
         </div>
 
         <!-- Step 2 Trigger -->
-        <div id="step-trigger-2" class="step-card group cursor-pointer transition-all duration-300 opacity-50" data-step="2">
+        <div
+          id="step-trigger-2"
+          class="step-card group cursor-pointer transition-all duration-500 opacity-35 min-h-[50vh] lg:min-h-[62vh] flex flex-col justify-center lg:pl-12 relative z-10"
+          data-step="2"
+        >
           <div class="flex items-center gap-3">
-            <span class="step-badge flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white text-xs font-semibold">
+            <span class="step-badge flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 text-white text-xs font-semibold transition-all duration-300">
               02
             </span>
-            <span class="text-xs font-semibold tracking-wider text-[#26C281] uppercase">Paso Dos · Verificación</span>
+            <span class="step-tag text-xs font-semibold tracking-wider text-white/50 uppercase transition-colors">
+              Paso Dos · Verificación
+            </span>
           </div>
 
-          <h3 class="step-title mt-4 text-2xl lg:text-3xl font-normal text-white group-hover:text-[#26C281] transition-colors">
+          <h3 class="step-title mt-4 text-2xl lg:text-3xl font-normal text-white/70 group-hover:text-[#26C281] transition-colors">
             Validación bancaria automática a tus cuentas
           </h3>
 
-          <p class="mt-3 text-[15px] leading-relaxed text-[#F4F5F7]/75">
+          <p class="mt-3 text-[15px] leading-relaxed text-[#F4F5F7]/60">
             El cliente paga por Pago Móvil y comparte la referencia. El sistema consulta directamente la API bancaria de tus cuentas en 1.8 segundos. Si los fondos no están en cuenta, la orden no procede.
           </p>
 
@@ -71,19 +88,25 @@ import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowRight } from
         </div>
 
         <!-- Step 3 Trigger -->
-        <div id="step-trigger-3" class="step-card group cursor-pointer transition-all duration-300 opacity-50" data-step="3">
+        <div
+          id="step-trigger-3"
+          class="step-card group cursor-pointer transition-all duration-500 opacity-35 min-h-[50vh] lg:min-h-[62vh] flex flex-col justify-center lg:pl-12 relative z-10"
+          data-step="3"
+        >
           <div class="flex items-center gap-3">
-            <span class="step-badge flex h-8 w-8 items-center justify-center rounded-full bg-white/20 text-white text-xs font-semibold">
+            <span class="step-badge flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-white/20 text-white text-xs font-semibold transition-all duration-300">
               03
             </span>
-            <span class="text-xs font-semibold tracking-wider text-[#26C281] uppercase">Paso Tres · Inyección</span>
+            <span class="step-tag text-xs font-semibold tracking-wider text-white/50 uppercase transition-colors">
+              Paso Tres · Inyección
+            </span>
           </div>
 
-          <h3 class="step-title mt-4 text-2xl lg:text-3xl font-normal text-white group-hover:text-[#26C281] transition-colors">
+          <h3 class="step-title mt-4 text-2xl lg:text-3xl font-normal text-white/70 group-hover:text-[#26C281] transition-colors">
             Inyección al POS existente e impresión en cocina
           </h3>
 
-          <p class="mt-3 text-[15px] leading-relaxed text-[#F4F5F7]/75">
+          <p class="mt-3 text-[15px] leading-relaxed text-[#F4F5F7]/60">
             La orden validada entra a tu sistema de caja actual (Saint, Profit, Valery, Odoo) con número de factura fiscal o comanda y se imprime en cocina. El inventario se descuenta y nadie digita a mano.
           </p>
 
@@ -95,14 +118,16 @@ import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowRight } from
 
       </div>
 
-      <!-- Right Column: Sticky UI Mockup Container -->
+      <!-- Right Column: Sticky Mockup Display (Pinned on desktop while you scroll) -->
       <div class="lg:col-span-7 lg:sticky lg:top-28">
-        <div class="rounded-[28px] border border-white/12 bg-[#091E36] p-6 lg:p-8 shadow-2xl relative overflow-hidden min-h-[460px] flex items-center justify-center">
+        <div class="rounded-[28px] border border-white/12 bg-[#091E36] p-4 sm:p-6 lg:p-8 shadow-2xl relative overflow-hidden min-h-[460px] sm:min-h-[500px]">
           
           <!-- Mockup Stage 1: WhatsApp Chat Simulation -->
-          <div id="stage-panel-1" class="stage-panel w-full transition-all duration-500 block opacity-100 transform-none">
-            <div class="rounded-2xl border border-white/10 bg-[#071527] p-5 shadow-lg">
-              
+          <div
+            id="stage-panel-1"
+            class="stage-panel absolute inset-4 sm:inset-6 lg:inset-8 flex items-center justify-center transition-all duration-500 ease-out opacity-100 scale-100 translate-y-0 z-10 pointer-events-auto"
+          >
+            <div class="w-full rounded-2xl border border-white/10 bg-[#071527] p-4 sm:p-6 shadow-xl">
               <div class="flex items-center justify-between pb-3 border-b border-white/10">
                 <div class="flex items-center gap-2.5">
                   <div class="flex h-9 w-9 items-center justify-center rounded-full bg-[#0FA968] text-white">
@@ -118,13 +143,13 @@ import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowRight } from
                 </span>
               </div>
 
-              <div class="my-5 space-y-3 text-[13px]">
-                <div class="max-w-[85%] rounded-2xl rounded-tl-xs bg-white/10 p-3.5 text-white shadow-xs">
+              <div class="my-4 sm:my-5 space-y-2.5 sm:space-y-3 text-[13px]">
+                <div class="max-w-[85%] rounded-2xl rounded-tl-xs bg-white/10 p-3 sm:p-3.5 text-white shadow-xs">
                   Hola, quiero pedir para delivery: 2 Hamburguesas Especiales (una sin cebolla y con papas rústicas) y 1 refresco.
                 </div>
 
-                <div class="ml-auto max-w-[90%] rounded-2xl rounded-tr-xs bg-[#0FA968] p-3.5 text-white shadow-md">
-                  ¡Con gusto! Pedido tomado:<br />
+                <div class="ml-auto max-w-[90%] rounded-2xl rounded-tr-xs bg-[#0FA968] p-3 sm:p-3.5 text-white shadow-md">
+                  ¡Con gusto! Pedido registrado:<br />
                   • 2x Hamburguesas Especiales (1 sin cebolla, papas rústicas)<br />
                   • 1x Refresco<br />
                   <div class="mt-2 pt-2 border-t border-white/20 text-xs font-semibold tabular-nums">
@@ -133,22 +158,23 @@ import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowRight } from
                   </div>
                 </div>
 
-                <div class="max-w-[85%] rounded-2xl rounded-tl-xs bg-white/10 p-3 text-white tabular-nums">
+                <div class="max-w-[85%] rounded-2xl rounded-tl-xs bg-white/10 p-2.5 sm:p-3 text-white tabular-nums">
                   Listo, pagado de Mercantil. Ref: <strong>781920</strong>
                 </div>
               </div>
 
-              <div class="rounded-xl bg-white/5 p-3 text-center text-xs text-white/70 border border-white/5">
+              <div class="rounded-xl bg-white/5 p-2.5 sm:p-3 text-center text-xs text-white/70 border border-white/5">
                 Paso 1: Conversación fluida, modificadores exactos y cálculo oficial BCV
               </div>
-
             </div>
           </div>
 
           <!-- Mockup Stage 2: Direct Banking Verification -->
-          <div id="stage-panel-2" class="stage-panel w-full transition-all duration-500 hidden opacity-0 translate-y-4">
-            <div class="rounded-2xl border border-white/10 bg-[#071527] p-6 shadow-lg">
-              
+          <div
+            id="stage-panel-2"
+            class="stage-panel absolute inset-4 sm:inset-6 lg:inset-8 flex items-center justify-center transition-all duration-500 ease-out opacity-0 scale-95 translate-y-4 z-0 pointer-events-none"
+          >
+            <div class="w-full rounded-2xl border border-white/10 bg-[#071527] p-5 sm:p-6 shadow-xl">
               <div class="flex items-center justify-between pb-4 border-b border-white/10">
                 <div class="flex items-center gap-2.5">
                   <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-warp-emerald text-white">
@@ -164,7 +190,7 @@ import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowRight } from
                 </span>
               </div>
 
-              <div class="my-6 rounded-2xl border border-white/10 bg-white/5 p-5 space-y-3">
+              <div class="my-5 sm:my-6 rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5 space-y-3">
                 <div class="flex justify-between text-xs text-white/70">
                   <span>Banco Emisor</span>
                   <span class="font-medium text-white">Banco Mercantil</span>
@@ -178,23 +204,24 @@ import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowRight } from
                   <span class="font-medium text-white tabular-nums">960.00 Bs (Exacto)</span>
                 </div>
 
-                <div class="mt-4 flex items-center gap-3 rounded-xl bg-[#0FA968]/15 border border-[#0FA968]/30 p-3.5 text-xs text-white">
+                <div class="mt-4 flex items-center gap-3 rounded-xl bg-[#0FA968]/15 border border-[#0FA968]/30 p-3 sm:p-3.5 text-xs text-white">
                   <CheckCircle2 class="h-5 w-5 text-[#26C281] shrink-0" />
-                  <span>Fondos confirmados en la cuenta bancaria del restaurante. Cero riesgo de comprobante falso.</span>
+                  <span>Fondos confirmados en la cuenta del restaurante. Cero riesgo de comprobante falso.</span>
                 </div>
               </div>
 
-              <div class="rounded-xl bg-white/5 p-3 text-center text-xs text-white/70 border border-white/5">
+              <div class="rounded-xl bg-white/5 p-2.5 sm:p-3 text-center text-xs text-white/70 border border-white/5">
                 Paso 2: Validación automática contra tu banco sin usar celulares personales
               </div>
-
             </div>
           </div>
 
           <!-- Mockup Stage 3: POS Injection & Kitchen Printing -->
-          <div id="stage-panel-3" class="stage-panel w-full transition-all duration-500 hidden opacity-0 translate-y-4">
-            <div class="rounded-2xl border border-white/10 bg-[#071527] p-6 shadow-lg">
-              
+          <div
+            id="stage-panel-3"
+            class="stage-panel absolute inset-4 sm:inset-6 lg:inset-8 flex items-center justify-center transition-all duration-500 ease-out opacity-0 scale-95 translate-y-4 z-0 pointer-events-none"
+          >
+            <div class="w-full rounded-2xl border border-white/10 bg-[#071527] p-5 sm:p-6 shadow-xl">
               <div class="flex items-center justify-between pb-4 border-b border-white/10">
                 <div class="flex items-center gap-2.5">
                   <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-warp-orange text-white">
@@ -210,7 +237,7 @@ import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowRight } from
                 </span>
               </div>
 
-              <div class="my-6 rounded-2xl border border-white/10 bg-white/5 p-5 space-y-3 font-mono">
+              <div class="my-5 sm:my-6 rounded-2xl border border-white/10 bg-white/5 p-4 sm:p-5 space-y-3 font-mono">
                 <div class="flex justify-between text-xs text-white/80 border-b border-white/10 pb-2">
                   <span>COMANDA #4082 [DELIVERY]</span>
                   <span class="text-[#26C281]">AUTORIZADO</span>
@@ -237,10 +264,9 @@ import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowRight } from
                 </div>
               </div>
 
-              <div class="rounded-xl bg-white/5 p-3 text-center text-xs text-white/70 border border-white/5">
+              <div class="rounded-xl bg-white/5 p-2.5 sm:p-3 text-center text-xs text-white/70 border border-white/5">
                 Paso 3: Venta registrada en caja, stock descontado e impresa en cocina
               </div>
-
             </div>
           </div>
 
@@ -255,78 +281,129 @@ import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowRight } from
 <script>
   function setupStickyStory() {
     const triggers = document.querySelectorAll('.step-card');
-    const panels = {
+    const progressLine = document.getElementById('scroll-progress-line');
+    const panels: Record<number, HTMLElement | null> = {
       1: document.getElementById('stage-panel-1'),
       2: document.getElementById('stage-panel-2'),
       3: document.getElementById('stage-panel-3'),
     };
 
-    function activateStep(stepNum: number) {
+    let activeStep = 1;
+
+    function applyStep(stepNum: number) {
+      if (activeStep === stepNum && panels[stepNum]?.classList.contains('opacity-100')) {
+        return;
+      }
+      activeStep = stepNum;
+
+      // Update triggers styles
       triggers.forEach((trigger) => {
         const num = Number(trigger.getAttribute('data-step'));
         const badge = trigger.querySelector('.step-badge');
+        const tag = trigger.querySelector('.step-tag');
         const title = trigger.querySelector('.step-title');
 
         if (num === stepNum) {
-          trigger.classList.remove('opacity-50');
+          trigger.classList.remove('opacity-35');
           trigger.classList.add('opacity-100');
           if (badge) {
             badge.classList.remove('bg-white/20');
-            badge.classList.add('bg-[#0FA968]', 'shadow-[0_0_15px_rgba(15,169,104,0.4)]');
+            badge.classList.add('bg-[#0FA968]', 'shadow-[0_0_18px_rgba(15,169,104,0.6)]');
+          }
+          if (tag) {
+            tag.classList.remove('text-white/50');
+            tag.classList.add('text-[#26C281]');
+          }
+          if (title) {
+            title.classList.remove('text-white/70');
+            title.classList.add('text-white');
           }
         } else {
           trigger.classList.remove('opacity-100');
-          trigger.classList.add('opacity-50');
+          trigger.classList.add('opacity-35');
           if (badge) {
-            badge.classList.remove('bg-[#0FA968]', 'shadow-[0_0_15px_rgba(15,169,104,0.4)]');
+            badge.classList.remove('bg-[#0FA968]', 'shadow-[0_0_18px_rgba(15,169,104,0.6)]');
             badge.classList.add('bg-white/20');
+          }
+          if (tag) {
+            tag.classList.remove('text-[#26C281]');
+            tag.classList.add('text-white/50');
+          }
+          if (title) {
+            title.classList.remove('text-white');
+            title.classList.add('text-white/70');
           }
         }
       });
 
-      // Switch panels with smooth fade
+      // Update vertical connecting line height
+      if (progressLine) {
+        if (stepNum === 1) progressLine.style.height = '15%';
+        else if (stepNum === 2) progressLine.style.height = '55%';
+        else if (stepNum === 3) progressLine.style.height = '100%';
+      }
+
+      // Smooth Cross-fade Panels with Scale & Translate
       Object.entries(panels).forEach(([key, panel]) => {
         if (!panel) return;
-        if (Number(key) === stepNum) {
-          panel.classList.remove('hidden', 'opacity-0', 'translate-y-4');
-          panel.classList.add('block', 'opacity-100', 'translate-y-0');
+        const panelNum = Number(key);
+        if (panelNum === stepNum) {
+          panel.classList.remove('opacity-0', 'scale-95', 'translate-y-4', 'pointer-events-none', 'z-0');
+          panel.classList.add('opacity-100', 'scale-100', 'translate-y-0', 'pointer-events-auto', 'z-10');
         } else {
-          panel.classList.remove('block', 'opacity-100', 'translate-y-0');
-          panel.classList.add('hidden', 'opacity-0', 'translate-y-4');
+          panel.classList.remove('opacity-100', 'scale-100', 'translate-y-0', 'pointer-events-auto', 'z-10');
+          panel.classList.add('opacity-0', 'scale-95', 'translate-y-4', 'pointer-events-none', 'z-0');
         }
       });
     }
 
-    // Click handler for direct navigation
+    // Scroll-driven calculation: Find which trigger is closest to the focal line
+    let ticking = false;
+    function checkScroll() {
+      const focalY = window.innerHeight * 0.45;
+      let closestStep = 1;
+      let minDistance = Infinity;
+
+      triggers.forEach((trigger) => {
+        const rect = trigger.getBoundingClientRect();
+        const center = rect.top + rect.height / 2;
+        const dist = Math.abs(center - focalY);
+        if (dist < minDistance) {
+          minDistance = dist;
+          closestStep = Number(trigger.getAttribute('data-step'));
+        }
+      });
+
+      if (closestStep !== activeStep) {
+        applyStep(closestStep);
+      }
+      ticking = false;
+    }
+
+    window.addEventListener(
+      'scroll',
+      () => {
+        if (!ticking) {
+          window.requestAnimationFrame(checkScroll);
+          ticking = true;
+        }
+      },
+      { passive: true }
+    );
+
+    // Click handler for users who also want to click
     triggers.forEach((trigger) => {
       trigger.addEventListener('click', () => {
         const step = Number(trigger.getAttribute('data-step'));
-        activateStep(step);
+        trigger.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        applyStep(step);
       });
     });
 
-    // IntersectionObserver for auto scroll activation
-    if ('IntersectionObserver' in window) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-              const step = Number(entry.target.getAttribute('data-step'));
-              if (step) activateStep(step);
-            }
-          });
-        },
-        {
-          rootMargin: '-20% 0px -40% 0px',
-          threshold: 0.5,
-        }
-      );
-
-      triggers.forEach((t) => observer.observe(t));
-    }
+    // Run once on initialization
+    checkScroll();
   }
 
-  // Run on load and after view transitions
   setupStickyStory();
   document.addEventListener('astro:after-swap', setupStickyStory);
 </script>
