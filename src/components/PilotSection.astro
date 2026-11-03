@@ -2,10 +2,27 @@
 import { Check, Sparkles, Shield, Users, ArrowRight } from '@lucide/astro';
 ---
 
-<section id="piloto" class="py-20 lg:py-28 bg-[#0B2545] text-white relative overflow-hidden">
-  <!-- Subtle background glow -->
-  <div class="absolute -top-40 -right-40 h-96 w-96 rounded-full bg-[#0FA968]/20 blur-3xl pointer-events-none"></div>
-  <div class="absolute -bottom-40 -left-40 h-96 w-96 rounded-full bg-[#D9622B]/15 blur-3xl pointer-events-none"></div>
+<section id="piloto" class="py-20 lg:py-28 text-white relative overflow-hidden bg-[#040911]">
+  <!-- Rich Organic Multi-Color Mesh Gradient (Matching the Hero exactly) -->
+  <div class="absolute inset-0 pointer-events-none overflow-hidden">
+    <!-- Deep obsidian base -->
+    <div class="absolute inset-0 bg-[#040911]"></div>
+
+    <!-- 1. Dominant Emerald Light Center-Top -->
+    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[1100px] h-[680px] bg-[radial-gradient(ellipse_at_center,rgba(15,169,104,0.38)_0%,rgba(38,194,129,0.2)_35%,transparent_70%)] blur-3xl"></div>
+
+    <!-- 2. Brand Navy Deep Resonance (#0B2545) -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1300px] h-[800px] bg-[radial-gradient(ellipse_at_center,rgba(11,37,69,0.70)_0%,transparent_65%)] blur-3xl"></div>
+
+    <!-- 3. Selective Warm Terracotta Orange Accent (#D9622B) in bottom-left corner -->
+    <div class="absolute -bottom-24 left-4 sm:left-20 w-[550px] h-[550px] bg-[radial-gradient(circle_at_center,rgba(217,98,43,0.26)_0%,rgba(229,128,81,0.12)_40%,transparent_70%)] blur-3xl"></div>
+
+    <!-- 4. Subtle Emerald glow in bottom-right corner -->
+    <div class="absolute -bottom-24 right-4 sm:right-20 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(15,169,104,0.22)_0%,transparent_65%)] blur-3xl"></div>
+
+    <!-- Subtle texture grid -->
+    <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
+  </div>
 
   <div class="relative mx-auto max-w-7xl px-6 lg:px-8">
     <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
