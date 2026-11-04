@@ -145,14 +145,19 @@ import { Check, Sparkles, Shield, Users, ArrowRight } from '@lucide/astro';
 
             <div>
               <label for="problem" class="block text-[13px] font-medium text-[#2B2D33]">¿Qué problema esperas resolver con Precyza?</label>
-              <textarea
+              <select
                 id="problem"
                 name="problem"
                 required
-                rows="3"
-                placeholder="Ej. Pérdida de tiempo con notas de voz, capturas falsas de Pago Móvil, descuadres al cierre de caja..."
-                class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] placeholder-[#5C616B]/60 focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all resize-none"
-              ></textarea>
+                class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all cursor-pointer"
+              >
+                <option value="" disabled selected>Selecciona el principal problema...</option>
+                <option value="Lentitud atendiendo en WhatsApp (audios largos y transcripción manual)">Lentitud atendiendo en WhatsApp (audios largos y transcripción manual)</option>
+                <option value="Fraudes con Pago Móvil y capturas falsas">Fraudes con Pago Móvil y capturas falsas</option>
+                <option value="Descuadres diarios y trasnocho al cerrar la caja">Descuadres diarios y trasnocho al cerrar la caja</option>
+                <option value="Errores de comanda entre el chat y la cocina">Errores de comanda entre el chat y la cocina</option>
+                <option value="Todos los anteriores (automatización integral de pedidos, pagos y caja)">Todos los anteriores (automatización integral de pedidos, pagos y caja)</option>
+              </select>
             </div>
 
             <div id="form-error" class="hidden text-xs text-red-600 bg-red-50 border border-red-200 rounded-lg p-2.5 mt-2"></div>
