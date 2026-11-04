@@ -1,5 +1,5 @@
 ---
-import { Mic, ShieldCheck, Calculator, Check, Play } from '@lucide/astro';
+import { Mic, ShieldCheck, Calculator, Check, Play, CircleX, CircleCheck } from '@lucide/astro';
 ---
 
 <section id="features" class="py-24 lg:py-32 bg-[#F4F5F7] text-[#2B2D33] border-t border-[#0B2545]/8 relative overflow-hidden">
@@ -34,13 +34,28 @@ import { Mic, ShieldCheck, Calculator, Check, Play } from '@lucide/astro';
             </span>
           </div>
 
-          <h3 class="mt-6 text-xl sm:text-2xl font-normal text-[#0B2545]">
-            "Tus clientes ya no escriben, mandan audios. Precyza los entiende al instante."
+          <h3 class="mt-6 text-xl sm:text-2xl font-normal text-[#0B2545] leading-snug">
+            Tus clientes ya no escriben, mandan audios. Precyza los entiende al instante.
           </h3>
 
-          <p class="mt-3 text-[14px] leading-relaxed text-[#5C616B]">
-            Se acabaron los cajeros perdiendo 40 segundos escuchando notas de voz con música o ruido de fondo. El motor de IA procesa audios en segundos, extrae ingredientes y entiende notas complejas de cocina.
-          </p>
+          <!-- Antes vs Con Precyza -->
+          <div class="mt-5 space-y-3">
+            <div class="rounded-xl border border-red-200/70 bg-red-50/60 p-3.5 text-xs leading-relaxed text-[#4B5563]">
+              <div class="flex items-center gap-1.5 font-semibold text-red-600 mb-1">
+                <CircleX class="h-3.5 w-3.5 shrink-0 text-red-500" />
+                <span>El problema (Antes)</span>
+              </div>
+              <p>Cajeros perdiendo hasta 1 minuto escuchando audios largos con ruido de fondo, interpretando mal notas de cocina y cometiendo errores costosos en el pedido.</p>
+            </div>
+
+            <div class="rounded-xl border border-[#0FA968]/30 bg-[#E6F8F0]/60 p-3.5 text-xs leading-relaxed text-[#1F2937]">
+              <div class="flex items-center gap-1.5 font-semibold text-[#0C8E57] mb-1">
+                <CircleCheck class="h-3.5 w-3.5 shrink-0 text-[#0FA968]" />
+                <span>Con Precyza</span>
+              </div>
+              <p>Transcripción en 1.2s directa a comanda estructurada: ingredientes exactos, notas de preparación y cálculo automático a tasa oficial BCV.</p>
+            </div>
+          </div>
 
           <!-- Interactive Mockup: WhatsApp Audio Player & Structured Extraction -->
           <div class="mt-6 rounded-2xl border border-[#0B2545]/8 bg-[#F4F5F7] p-4 space-y-3">
@@ -83,26 +98,41 @@ import { Mic, ShieldCheck, Calculator, Check, Play } from '@lucide/astro';
 
       <!-- Feature 2: Blindaje Antifraude -->
       <div
-        class="feature-reveal-card flex flex-col justify-between rounded-[28px] border border-[#0B2545]/8 bg-white p-7 sm:p-8 shadow-xs hover:shadow-xl hover:border-[#D9622B]/40 transition-all duration-500 opacity-0 translate-y-6"
+        class="feature-reveal-card flex flex-col justify-between rounded-[28px] border border-[#0B2545]/8 bg-white p-7 sm:p-8 shadow-xs hover:shadow-xl hover:border-[#0FA968]/40 transition-all duration-500 opacity-0 translate-y-6"
         style="transition-delay: 250ms;"
       >
         <div>
           <div class="flex items-center justify-between">
-            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-warp-orange text-white shadow-md">
-              <ShieldCheck class="h-6 w-6" />
+            <div class="flex h-12 w-12 items-center justify-center rounded-2xl bg-[#0B2545] text-white shadow-md">
+              <ShieldCheck class="h-6 w-6 text-[#26C281]" />
             </div>
-            <span class="rounded-full bg-[#FDF0EA] px-3 py-1 text-xs font-medium text-[#D9622B]">
+            <span class="rounded-full bg-[#E6F8F0] px-3 py-1 text-xs font-medium text-[#0C8E57]">
               Cero Fraudes
             </span>
           </div>
 
-          <h3 class="mt-6 text-xl sm:text-2xl font-normal text-[#0B2545]">
-            "Olvídate de las capturas editadas. Si el dinero no está en tu cuenta, la comida no sale."
+          <h3 class="mt-6 text-xl sm:text-2xl font-normal text-[#0B2545] leading-snug">
+            Olvídate de las capturas editadas. Si el dinero no está en tu cuenta, la comida no sale.
           </h3>
 
-          <p class="mt-3 text-[14px] leading-relaxed text-[#5C616B]">
-            El fraude con montajes de Photoshop y apps que simulan transferencias bancarias es una fuga diaria. Precyza no confía en imágenes: valida los fondos consultando directamente la API de tu banco.
-          </p>
+          <!-- Antes vs Con Precyza -->
+          <div class="mt-5 space-y-3">
+            <div class="rounded-xl border border-red-200/70 bg-red-50/60 p-3.5 text-xs leading-relaxed text-[#4B5563]">
+              <div class="flex items-center gap-1.5 font-semibold text-red-600 mb-1">
+                <CircleX class="h-3.5 w-3.5 shrink-0 text-red-500" />
+                <span>El problema (Antes)</span>
+              </div>
+              <p>Cajeros aceptando capturas falsas de Pago Móvil editadas con Photoshop o apps que simulan transferencias. Se despacha comida antes de verificar y el negocio asume la pérdida.</p>
+            </div>
+
+            <div class="rounded-xl border border-[#0FA968]/30 bg-[#E6F8F0]/60 p-3.5 text-xs leading-relaxed text-[#1F2937]">
+              <div class="flex items-center gap-1.5 font-semibold text-[#0C8E57] mb-1">
+                <CircleCheck class="h-3.5 w-3.5 shrink-0 text-[#0FA968]" />
+                <span>Con Precyza</span>
+              </div>
+              <p>Validación directa contra la API de tu banco en 1.8s. Si los fondos no están acreditados en tiempo real en tu cuenta, la comanda jamás se envía a cocina.</p>
+            </div>
+          </div>
 
           <!-- Interactive Mockup: Anti-fraud Bank Inspector -->
           <div class="mt-6 rounded-2xl border border-[#0B2545]/8 bg-[#F4F5F7] p-4 space-y-2.5">
@@ -133,7 +163,7 @@ import { Mic, ShieldCheck, Calculator, Check, Play } from '@lucide/astro';
           </div>
         </div>
 
-        <div class="mt-6 pt-4 border-t border-[#0B2545]/8 flex items-center justify-between text-xs text-[#D9622B] font-medium">
+        <div class="mt-6 pt-4 border-t border-[#0B2545]/8 flex items-center justify-between text-xs text-[#0C8E57] font-medium">
           <span>Protección absoluta contra capturas falsas</span>
           <Check class="h-4 w-4" />
         </div>
@@ -154,13 +184,28 @@ import { Mic, ShieldCheck, Calculator, Check, Play } from '@lucide/astro';
             </span>
           </div>
 
-          <h3 class="mt-6 text-xl sm:text-2xl font-normal text-[#0B2545]">
-            "El fin de las 2 horas de trasnocho cuadrando la caja al cierre."
+          <h3 class="mt-6 text-xl sm:text-2xl font-normal text-[#0B2545] leading-snug">
+            El fin de las 2 horas de trasnocho cuadrando la caja al cierre.
           </h3>
 
-          <p class="mt-3 text-[14px] leading-relaxed text-[#5C616B]">
-            Tu noche no debería terminar comparando comprobantes de WhatsApp contra el estado de cuenta y el POS. Cada bolívar y dólar queda vinculado a su referencia bancaria unívoca en tu sistema contable.
-          </p>
+          <!-- Antes vs Con Precyza -->
+          <div class="mt-5 space-y-3">
+            <div class="rounded-xl border border-red-200/70 bg-red-50/60 p-3.5 text-xs leading-relaxed text-[#4B5563]">
+              <div class="flex items-center gap-1.5 font-semibold text-red-600 mb-1">
+                <CircleX class="h-3.5 w-3.5 shrink-0 text-red-500" />
+                <span>El problema (Antes)</span>
+              </div>
+              <p>2 horas de trasnocho cruzando comprobantes de WhatsApp con el estado bancario y el POS. Faltantes de caja, referencias repetidas y descuadres diarios.</p>
+            </div>
+
+            <div class="rounded-xl border border-[#0FA968]/30 bg-[#E6F8F0]/60 p-3.5 text-xs leading-relaxed text-[#1F2937]">
+              <div class="flex items-center gap-1.5 font-semibold text-[#0C8E57] mb-1">
+                <CircleCheck class="h-3.5 w-3.5 shrink-0 text-[#0FA968]" />
+                <span>Con Precyza</span>
+              </div>
+              <p>Arqueo en 1 clic con vinculación unívoca de cada bolívar y dólar a su referencia bancaria y comanda en tu ERP. Cero descuadres (±0.00 Bs).</p>
+            </div>
+          </div>
 
           <!-- Interactive Mockup: One-Click Cashier Shift Reconciliation -->
           <div class="mt-6 rounded-2xl border border-[#0B2545]/8 bg-[#F4F5F7] p-4 space-y-2.5">
@@ -217,7 +262,7 @@ import { Mic, ShieldCheck, Calculator, Check, Play } from '@lucide/astro';
             }
           });
         },
-        { threshold: 0.2 }
+        { threshold: 0.15 }
       );
 
       cards.forEach((card) => observer.observe(card));

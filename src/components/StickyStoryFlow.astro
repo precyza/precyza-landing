@@ -8,14 +8,34 @@ import { MessageSquare, ShieldCheck, Cpu, CheckCircle2, Check, ArrowDown } from 
   The inner container is sticky top-0 h-screen, pinning the screen in place
   until the user has fully scrolled through all 3 animation phases.
 -->
-<section id="flujo" class="relative w-full h-[320vh] bg-[#071527] text-white">
+<section id="flujo" class="relative w-full h-[320vh] bg-[#030712] text-white">
   
   <!-- Pinned Viewport Container (Locks to screen during scroll) -->
   <div class="sticky top-0 h-screen w-full flex flex-col justify-center overflow-hidden border-t border-b border-white/10">
     
-    <!-- Ambient background lighting inside pinned viewport -->
-    <div class="absolute top-1/2 left-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(15,169,104,0.18)_0%,transparent_60%)] blur-3xl pointer-events-none"></div>
-    <div class="absolute top-1/2 right-1/4 -translate-y-1/2 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(38,194,129,0.15)_0%,transparent_60%)] blur-3xl pointer-events-none"></div>
+    <!-- Perimeter Emerald Glow (Edges only, Center remains deep dark, No orange, Subtle grid) -->
+    <div class="absolute inset-0 pointer-events-none overflow-hidden">
+      <!-- Deep obsidian base -->
+      <div class="absolute inset-0 bg-[#030712]"></div>
+
+      <!-- Top-Left Corner Emerald Glow -->
+      <div class="absolute -top-32 -left-32 w-[650px] h-[650px] bg-[radial-gradient(circle_at_center,rgba(15,169,104,0.28)_0%,rgba(11,37,69,0.35)_40%,transparent_70%)] blur-3xl"></div>
+
+      <!-- Top-Right Corner Emerald Glow -->
+      <div class="absolute -top-32 -right-32 w-[650px] h-[650px] bg-[radial-gradient(circle_at_center,rgba(38,194,129,0.24)_0%,rgba(11,37,69,0.35)_40%,transparent_70%)] blur-3xl"></div>
+
+      <!-- Bottom-Left Corner Emerald Glow -->
+      <div class="absolute -bottom-32 -left-32 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(15,169,104,0.20)_0%,transparent_65%)] blur-3xl"></div>
+
+      <!-- Bottom-Right Corner Emerald Glow -->
+      <div class="absolute -bottom-32 -right-32 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(38,194,129,0.20)_0%,transparent_65%)] blur-3xl"></div>
+
+      <!-- Center Mask to ensure center remains deep dark -->
+      <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(3,7,18,0.94)_0%,rgba(3,7,18,0.5)_55%,transparent_100%)]"></div>
+
+      <!-- Subtle Technical Grid with very low opacity -->
+      <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_65%_55%_at_50%_50%,#000_60%,transparent_100%)]"></div>
+    </div>
 
     <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 w-full py-4">
       

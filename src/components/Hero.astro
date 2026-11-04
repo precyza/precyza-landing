@@ -2,32 +2,38 @@
 import { ArrowRight, ChevronDown } from '@lucide/astro';
 ---
 
-<section class="relative overflow-hidden pt-20 pb-28 md:pt-32 md:pb-36 text-white bg-[#040911]">
-  <!-- Rich Organic Multi-Color Mesh Gradient (Emerald #0FA968, Navy #0B2545, Terracotta #D9622B on Obsidian #040911) -->
+<section class="relative overflow-hidden pt-20 pb-28 md:pt-32 md:pb-36 text-white bg-[#030712]">
+  <!-- Perimeter Glow Aura (Edges only, Center remains deep dark, No orange, Subtle grid) -->
   <div class="absolute inset-0 pointer-events-none overflow-hidden">
     <!-- Deep obsidian base -->
-    <div class="absolute inset-0 bg-[#040911]"></div>
+    <div class="absolute inset-0 bg-[#030712]"></div>
 
-    <!-- 1. Dominant Emerald Light Center-Top -->
-    <div class="absolute -top-24 left-1/2 -translate-x-1/2 w-[1100px] h-[680px] bg-[radial-gradient(ellipse_at_center,rgba(15,169,104,0.40)_0%,rgba(38,194,129,0.22)_35%,transparent_70%)] blur-3xl"></div>
+    <!-- Top-Left Corner Emerald Glow -->
+    <div class="absolute -top-32 -left-32 w-[650px] h-[650px] bg-[radial-gradient(circle_at_center,rgba(15,169,104,0.30)_0%,rgba(11,37,69,0.35)_40%,transparent_70%)] blur-3xl"></div>
 
-    <!-- 2. Brand Navy Deep Resonance (#0B2545) -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[1300px] h-[800px] bg-[radial-gradient(ellipse_at_center,rgba(11,37,69,0.70)_0%,transparent_65%)] blur-3xl"></div>
+    <!-- Top-Right Corner Emerald Glow -->
+    <div class="absolute -top-32 -right-32 w-[650px] h-[650px] bg-[radial-gradient(circle_at_center,rgba(38,194,129,0.26)_0%,rgba(11,37,69,0.35)_40%,transparent_70%)] blur-3xl"></div>
 
-    <!-- 3. Selective Warm Terracotta Orange Accent (#D9622B) in bottom-right corner -->
-    <div class="absolute -bottom-24 right-4 sm:right-20 w-[550px] h-[550px] bg-[radial-gradient(circle_at_center,rgba(217,98,43,0.26)_0%,rgba(229,128,81,0.12)_40%,transparent_70%)] blur-3xl"></div>
+    <!-- Bottom-Left Corner Emerald Glow -->
+    <div class="absolute -bottom-32 -left-32 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(15,169,104,0.22)_0%,rgba(11,37,69,0.25)_40%,transparent_65%)] blur-3xl"></div>
 
-    <!-- 4. Subtle Emerald glow in bottom-left corner -->
-    <div class="absolute -bottom-24 left-4 sm:left-20 w-[500px] h-[500px] bg-[radial-gradient(circle_at_center,rgba(15,169,104,0.22)_0%,transparent_65%)] blur-3xl"></div>
+    <!-- Bottom-Right Corner Emerald Glow -->
+    <div class="absolute -bottom-32 -right-32 w-[600px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(38,194,129,0.22)_0%,rgba(11,37,69,0.25)_40%,transparent_65%)] blur-3xl"></div>
 
-    <!-- Subtle texture grid -->
-    <div class="absolute inset-0 bg-[radial-gradient(rgba(255,255,255,0.05)_1px,transparent_1px)] [background-size:24px_24px] opacity-40"></div>
+    <!-- Top Perimeter Edge Glow -->
+    <div class="absolute -top-40 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[radial-gradient(ellipse_at_center,rgba(15,169,104,0.18)_0%,transparent_65%)] blur-3xl"></div>
+
+    <!-- Center Mask to ensure the center remains deep dark -->
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(3,7,18,0.94)_0%,rgba(3,7,18,0.5)_55%,transparent_100%)]"></div>
+
+    <!-- Subtle Technical Grid with very low opacity -->
+    <div class="absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.025)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.025)_1px,transparent_1px)] bg-[size:48px_48px] [mask-image:radial-gradient(ellipse_65%_55%_at_50%_50%,#000_60%,transparent_100%)]"></div>
   </div>
 
   <div class="relative z-10 mx-auto max-w-5xl px-6 lg:px-8 text-center">
     
-    <!-- Headline with inline symbols inspired by HackerRank -->
-    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-normal tracking-tight text-white leading-[1.12]">
+    <!-- Headline with inline symbols and +20% font weight (font-medium 500) -->
+    <h1 class="text-4xl sm:text-6xl lg:text-7xl font-medium tracking-tight text-white leading-[1.12]">
       El nuevo estándar en delivery y pick up es
       <span class="block mt-4 sm:mt-5 items-center justify-center gap-3">
         <span class="inline-flex items-center gap-2 rounded-2xl bg-white/10 px-4 py-1.5 border border-white/20 text-[#26C281] backdrop-blur-md shadow-[0_0_30px_rgba(38,194,129,0.35)]">
