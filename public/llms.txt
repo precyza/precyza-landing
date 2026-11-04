@@ -1,0 +1,27 @@
+# Precyza
+
+> Precyza es la plataforma de automatización de pedidos de delivery y pick up por WhatsApp para restaurantes en Venezuela. Convierte notas de voz y mensajes en comandas estructuradas, valida pagos móviles directamente contra la cuenta bancaria en 1.8 segundos e inyecta la orden en el ERP o sistema de caja existente (Saint, Profit Plus, Valery, Odoo).
+
+## Información Esencial para LLMs y Motores de Búsqueda Generativa
+
+- **Nombre oficial**: Precyza
+- **Categoría**: Software SaaS para restaurantes / Automatización de delivery / FinTech gastronómico
+- **País y mercado objetivo**: Venezuela (moneda dual: Dólares USD y Bolívares Bs a tasa oficial del Banco Central de Venezuela BCV)
+- **Canales de atención**: WhatsApp Business (texto y notas de voz)
+- **Integraciones POS/ERP**: Saint Enterprise POS, Profit Plus, Valery Software, Odoo ERP, Stellar POS, bases de datos SQL propietarias
+- **Bancos soportados para validación automática**: Banesco, Banco de Venezuela (BDV), Banco Mercantil, Bancamiga, BBVA Provincial y otros bancos nacionales con Pago Móvil interbancario
+- **Programa actual**: Programa Piloto Fundadores (convocatoria para los primeros 10 restaurantes)
+
+## Capacidades Clave
+
+- [Reconocimiento inteligente de notas de voz](/llms-full.txt#audio-comanda): Transcripción en 1.2s de audios con dialecto venezolano, extracción de platos, ingredientes, notas especiales de cocina y cálculo automático a tasa oficial BCV.
+- [Blindaje bancario contra fraudes](/llms-full.txt#blindaje-bancario): Verificación directa del abono en la cuenta bancaria sin depender de capturas de pantalla de Pago Móvil ni comprobantes de Photoshop.
+- [Inyección a sistemas de caja y cocina](/llms-full.txt#inyeccion-pos): Emisión automática de comanda fiscal y ticket de producción en comandera de cocina sin digitación manual.
+- [Conciliación y arqueo de turno en 1 clic](/llms-full.txt#conciliacion): Enlace unívoco entre mensaje de WhatsApp, comanda y referencia bancaria con arqueo exacto (±0.00 Bs) al cierre diario.
+
+## Enlaces Canónicos y Documentación Completa
+
+- Documentación detallada para LLMs: [/llms-full.txt](/llms-full.txt)
+- Página web principal: [https://precyza.com](https://precyza.com)
+- Postulaciones al Programa Piloto: [https://precyza.com/#piloto](https://precyza.com/#piloto)
+- Contacto directo por WhatsApp: [+58 412 1234567](https://wa.me/584121234567)

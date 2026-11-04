@@ -8,8 +8,105 @@ interface Props {
 
 const {
   title = 'Automatiza pedidos por WhatsApp para tu restaurante | Precyza',
-  description = 'Toma de pedidos conversacional en segundos, validación de Pago Móvil en tu banco al instante y comanda directa a cocina sin tocar una sola tecla.'
+  description = 'Recibe pedidos en WhatsApp por mensaje o nota de voz, calcula el delivery por zona, valida cada Pago Móvil en tu banco al instante y pasa la orden a cocina sin tocar una sola tecla.'
 } = Astro.props;
+
+const siteUrl = 'https://precyza.com';
+const canonicalUrl = siteUrl;
+const ogImageUrl = `${siteUrl}/brand/logo-emerald-transparent.png`;
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${siteUrl}/#software`,
+      "name": "Precyza",
+      "applicationCategory": "BusinessApplication",
+      "operatingSystem": "Web, Cloud, WhatsApp Business",
+      "description": "Plataforma de automatización de pedidos de delivery y pick up por WhatsApp con validación de Pago Móvil en tiempo real e inyección automática a POS/ERP gastronómico (Saint, Profit Plus, Valery, Odoo).",
+      "url": siteUrl,
+      "softwareRequirements": "WhatsApp Business, Conexión a Internet",
+      "areaServed": {
+        "@type": "Country",
+        "name": "Venezuela"
+      },
+      "featureList": [
+        "Reconocimiento y transcripción de notas de voz en 1.2s",
+        "Extracción estructurada de platos, cantidades y modificadores de cocina",
+        "Validación bancaria automática de Pago Móvil en 1.8s sin capturas falsas",
+        "Cálculo bimoneda en USD y Bolívares (Bs) a tasa oficial del Banco Central de Venezuela (BCV)",
+        "Inyección directa de comandas a sistemas de caja Saint Enterprise, Profit Plus, Valery Software y Odoo",
+        "Conciliación bancaria diaria y arqueo de caja de turno en 1 clic (±0.00 Bs)"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "description": "Programa Piloto Fundadores para los primeros 10 restaurantes con setup bonificado."
+      }
+    },
+    {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      "name": "Precyza",
+      "url": siteUrl,
+      "logo": `${siteUrl}/brand/logo-mark-emerald.png`,
+      "description": "Tecnología de automatización de pedidos, seguridad bancaria y conexión ERP para operaciones gastronómicas.",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "availableLanguage": "Spanish"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": `${siteUrl}/#faq`,
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "¿Cómo evita Precyza los fraudes con capturas falsas de Pago Móvil?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Precyza no depende del análisis visual de capturas de pantalla de WhatsApp. Cuando el cliente comparte el número de referencia, el sistema consulta directamente la cuenta bancaria del restaurante en 1.8 segundos. Si los fondos no están acreditados en la cuenta, la comanda jamás entra a cocina ni se emite ticket de despacho."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Precyza entiende notas de voz con modismos venezolanos y ruido de fondo?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Sí. El motor de inteligencia artificial de Precyza está adaptado al dialecto venezolano y filtra ruidos de fondo, transcribiendo pedidos de audio en 1.2 segundos y extrayendo platos, modificadores (como 'sin cebolla' o 'salsa aparte') e instrucciones especiales de cocina."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Es necesario cambiar el sistema de caja o POS para usar Precyza?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. Precyza se integra directamente con el sistema de caja actual de tu restaurante (Saint Enterprise POS, Profit Plus, Valery Software, Odoo ERP, Stellar POS o software propio SQL) e inyecta la comanda directamente como venta pagada."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo se calculan los montos en bolívares y dólares?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Precyza sincroniza la tasa oficial del Banco Central de Venezuela (BCV) del día y calcula automáticamente el total de la orden y el delivery en dólares y bolívares exactos, indicando los datos de Pago Móvil al cliente al instante."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "¿Cómo funciona el arqueo de turno y la conciliación?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Cada bolívar y dólar cobrado queda vinculado a su comanda de WhatsApp, su referencia bancaria unívoca y su ticket de POS. Al cierre del turno, el encargado genera el reporte contable en 1 clic con cero descuadres entre WhatsApp, el banco y la caja."
+          }
+        }
+      ]
+    }
+  ]
+};
 ---
 
 <!doctype html>
@@ -21,6 +118,31 @@ const {
     <link rel="icon" type="image/png" href="/brand/logo-mark-emerald.png" />
     <meta name="description" content={description} />
     <title>{title}</title>
+
+    <!-- Canonical & Alternate for AI Crawlers (llms.txt standard) -->
+    <link rel="canonical" href={canonicalUrl} />
+    <link rel="alternate" type="text/markdown" href={`${siteUrl}/llms.txt`} title="LLM Content Index" />
+
+    <!-- Open Graph / Facebook / WhatsApp Rich Preview -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:site_name" content="Precyza" />
+    <meta property="og:locale" content="es_VE" />
+
+    <!-- Twitter / X Rich Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <!-- AI & Search Engine Crawling Directive -->
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+
+    <!-- Schema.org Structured Data (JSON-LD) for LLMs & Search Engines -->
+    <script type="application/ld+json" set:html={JSON.stringify(structuredData)} />
 
     <!-- Google Fonts: Space Grotesk & Plus Jakarta Sans -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />

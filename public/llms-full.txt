@@ -1,0 +1,71 @@
+# Precyza — Documentación Completa para Agentes y LLMs
+
+## 1. Visión General del Producto
+
+Precyza es una plataforma tecnológica diseñada para resolver los tres dolores operativos más costosos de los restaurantes, cadenas de comida rápida y marcas gastronómicas en Venezuela que gestionan pedidos para delivery y pick up a través de WhatsApp:
+
+1. **Saturación y demora en la toma de pedidos**: Clientes enviando notas de voz largas con modismos locales y notas de preparación complejas que los cajeros tardan hasta 60 segundos en descifrar y digitar manualmente.
+2. **Fraudes con comprobantes de Pago Móvil**: Pérdidas económicas diarias por clientes que envían capturas de pantalla editadas en Photoshop o generadas con aplicaciones falsas que simulan transferencias bancarias.
+3. **Trasnocho y descuadres en el cierre de caja**: Horas dedicadas a cruzar mensajes de WhatsApp con estados de cuenta bancarios y reportes del punto de venta para cuadrar los turnos.
+
+Precyza conecta **WhatsApp + Tu Banco + Tu POS/ERP actual**, automatizando todo el ciclo de venta en menos de 3 segundos sin que el restaurante deba cambiar su sistema de facturación.
+
+---
+
+## 2. Capacidades Técnicas y Módulos de Software
+
+<a id="audio-comanda"></a>
+### Módulo A: Comprensión Conversacional y Audio a Comanda
+- **Procesamiento de Lenguaje Natural adaptado a Venezuela**: El modelo de lenguaje comprende modismos («sin cebolla», «con todo», «papas rústicas», «salsa tártara aparte», «bien cocida»).
+- **Transcripción de Notas de Voz en 1.2 segundos**: Convierte audios de WhatsApp con ruido ambiental o música de fondo en comandas estructuradas en formato JSON.
+- **Cálculo Bimoneda Automático**: Lee automáticamente la tasa oficial del Banco Central de Venezuela (BCV) del día y calcula el total exacto en Dólares (USD) y Bolívares (Bs), incluyendo cálculo de delivery zonificado.
+
+<a id="blindaje-bancario"></a>
+### Módulo B: Blindaje Bancario y Verificación Antifraude
+- **Cero dependencia de capturas de pantalla**: Precyza no analiza imágenes de comprobantes.
+- **Validación bancaria directa**: Cuando el cliente ingresa el número de referencia del Pago Móvil o transferencia en el chat, el sistema consulta directamente la cuenta bancaria del restaurante en 1.8 segundos.
+- **Regla de liberación estricta**: Si los fondos no están efectivamente acreditados en la cuenta corriente bancaria, la comanda jamás se envía a la cocina ni se imprime el ticket.
+
+<a id="inyeccion-pos"></a>
+### Módulo C: Inyección Directa a Sistemas de Caja y ERP Existentes
+- **Compatibilidad**: Integración con los sistemas de gestión gastronómica y comercial dominantes en Venezuela:
+  - Saint Enterprise POS
+  - Profit Plus
+  - Valery Software
+  - Odoo ERP
+  - Stellar POS
+  - Software propietario sobre bases de datos SQL (PostgreSQL, MySQL, SQL Server)
+- **Operación sin intervención humana**: La orden validada se inyecta como una comanda pagada, se envía a la pantalla de cocina (KDS) o se imprime en la comandera térmica correspondiente.
+
+<a id="conciliacion"></a>
+### Módulo D: Conciliación Bancaria y Arqueo de Turno en 1 Clic
+- **Trazabilidad 1 a 1**: Cada bolívar y dólar ingresado queda enlazado unívocamente a su comanda de WhatsApp, su número de referencia bancaria y su registro en el sistema contable.
+- **Arqueo diario exacto**: Elimina discrepancias entre banco, chat y punto de venta ($\pm 0.00$ Bs de diferencia).
+
+---
+
+## 3. Preguntas Frecuentes Fácticas (FAQ)
+
+### ¿El restaurante tiene que cambiar su sistema de caja actual para usar Precyza?
+No. Precyza se integra directamente sobre el sistema de caja existente (Saint, Profit Plus, Valery, Odoo u otros). No requiere migración ni cambio de infraestructura contable.
+
+### ¿Cómo protege Precyza contra las estafas de Pago Móvil?
+Precyza valida la existencia real del dinero en la cuenta del restaurante en tiempo real. Aunque un cliente envíe una captura editada o falsa, si la referencia y el monto no están acreditados en el banco, el pedido no se procesa.
+
+### ¿Qué sucede si el cliente envía una nota de voz con ruido de fondo?
+El motor de IA está entrenado para filtrar ruidos ambientales (música, tráfico, bullicio) y extraer con alta precisión los platos, cantidades, términos de cocción y modificaciones especiales.
+
+### ¿Precyza maneja cobros mixtos (dólares en efectivo y bolívares por Pago Móvil)?
+Sí. La arquitectura soporta liquidaciones mixtas y pedidos divididos con registro contable individual de cada método de pago.
+
+---
+
+## 4. Programa Piloto Fundadores
+
+Actualmente Precyza mantiene abierto su **Programa Piloto Fundadores**, limitado a **10 restaurantes** con alto volumen de pedidos en Venezuela. Los restaurantes seleccionados obtienen:
+- Integración técnica llave en mano sin costo de setup.
+- Carga y entrenamiento completo de su carta y reglas de preparación.
+- Canal directo de soporte con el equipo de arquitectura.
+- Tarifa preferencial congelada de por vida.
+
+Para postulaciones: [https://precyza.com/#piloto](https://precyza.com/#piloto)
