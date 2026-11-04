@@ -7,9 +7,9 @@ export const POST: APIRoute = async ({ request }) => {
     const data = await request.json();
     const { name, restaurant, whatsapp, problem } = data;
 
-    if (!name || !restaurant || !whatsapp) {
+    if (!whatsapp) {
       return new Response(
-        JSON.stringify({ ok: false, error: 'Faltan campos obligatorios' }),
+        JSON.stringify({ ok: false, error: 'Por favor ingresa tu número de WhatsApp' }),
         { status: 400, headers: { 'Content-Type': 'application/json' } }
       );
     }
@@ -35,10 +35,10 @@ export const POST: APIRoute = async ({ request }) => {
       timeStyle: 'short',
     });
 
-    const message = `🚀 <b>Nueva Postulación al Piloto de Precyza</b>
+    const restaurantLine = restaurant ? `\n🏢 <b>Restaurante:</b> ${escapeHtml(restaurant)}` : '';
+    const nameLine = name ? `\n👤 <b>Nombre:</b> ${escapeHtml(name)}` : '';
 
-👤 <b>Responsable:</b> ${escapeHtml(name)}
-🏢 <b>Restaurante:</b> ${escapeHtml(restaurant)}
+    const message = `🚀 <b>Nuevo Registro en Lista de Espera · Precyza</b>${nameLine}${restaurantLine}
 📱 <b>WhatsApp:</b> ${waLink ? `<a href="${waLink}">${escapeHtml(whatsapp)}</a>` : escapeHtml(whatsapp)}
 🎯 <b>Problema que espera resolver:</b>
 ${escapeHtml(problem || 'No especificado')}

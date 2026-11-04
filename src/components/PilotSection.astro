@@ -100,47 +100,21 @@ import { Check, Sparkles, Shield, Users, ArrowRight } from '@lucide/astro';
       <div class="lg:col-span-6">
         <div class="rounded-[24px] bg-white p-7 lg:p-9 text-[#2B2D33] shadow-2xl">
           <div class="border-b border-[#0B2545]/8 pb-4">
-            <h3 class="text-2xl font-normal text-[#0B2545]">Postula tu restaurante</h3>
-            <p class="mt-1 text-[13px] text-[#5C616B]">Completa tus datos para agendar la llamada técnica de diagnóstico.</p>
+            <h3 class="text-2xl font-normal text-[#0B2545]">Únete a la lista de espera</h3>
+            <p class="mt-1 text-[13px] text-[#5C616B]">Te contactaremos para darte los detalles</p>
           </div>
 
           <form id="pilot-form" class="mt-6 space-y-4">
             <div>
-              <label for="lead-name" class="block text-[13px] font-medium text-[#2B2D33]">Nombre y Apellido</label>
+              <label for="whatsapp" class="block text-[13px] font-medium text-[#2B2D33]">Teléfono WhatsApp de contacto</label>
               <input
-                type="text"
-                id="lead-name"
-                name="name"
+                type="tel"
+                id="whatsapp"
+                name="whatsapp"
                 required
-                placeholder="Ej. Carlos Mendoza"
+                placeholder="Ej. +58 412 1234567"
                 class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] placeholder-[#5C616B]/60 focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all"
               />
-            </div>
-
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label for="restaurant-name" class="block text-[13px] font-medium text-[#2B2D33]">Nombre del Restaurante</label>
-                <input
-                  type="text"
-                  id="restaurant-name"
-                  name="restaurant"
-                  required
-                  placeholder="Ej. Burger Station"
-                  class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] placeholder-[#5C616B]/60 focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all"
-                />
-              </div>
-
-              <div>
-                <label for="whatsapp" class="block text-[13px] font-medium text-[#2B2D33]">Teléfono WhatsApp de contacto</label>
-                <input
-                  type="tel"
-                  id="whatsapp"
-                  name="whatsapp"
-                  required
-                  placeholder="Ej. +58 412 1234567"
-                  class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] placeholder-[#5C616B]/60 focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all"
-                />
-              </div>
             </div>
 
             <div>
@@ -167,7 +141,7 @@ import { Check, Sparkles, Shield, Users, ArrowRight } from '@lucide/astro';
               type="submit"
               class="w-full mt-2 inline-flex items-center justify-center gap-2 rounded-full bg-warp-emerald py-3.5 text-[15px] font-medium text-white shadow-[0_4px_14px_rgba(15,169,104,0.32)] transition-transform hover:scale-[1.01] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0FA968] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
             >
-              <span id="btn-text">Postular mi Restaurante (10 cupos)</span>
+              <span id="btn-text">Unirme a la lista de espera</span>
               <ArrowRight id="btn-icon" class="h-4 w-4" />
             </button>
 
@@ -181,9 +155,9 @@ import { Check, Sparkles, Shield, Users, ArrowRight } from '@lucide/astro';
             <div class="mx-auto flex h-14 w-14 items-center justify-center rounded-full bg-[#E6F8F0] text-[#0FA968]">
               <Check class="h-8 w-8 stroke-[2.5]" />
             </div>
-            <h4 class="text-xl font-normal text-[#0B2545]">¡Postulación recibida con éxito!</h4>
+            <h4 class="text-xl font-normal text-[#0B2545]">¡Registro recibido con éxito!</h4>
             <p class="text-[14px] text-[#5C616B] max-w-sm mx-auto">
-              Hemos registrado los datos de tu restaurante y te enviamos la confirmación a nuestro canal de fundadores. Te escribiremos directamente a tu WhatsApp para coordinar el diagnóstico técnico.
+              Te contactaremos directamente a tu WhatsApp para darte todos los detalles y coordinar la activación.
             </p>
           </div>
         </div>
@@ -243,7 +217,7 @@ import { Check, Sparkles, Shield, Users, ArrowRight } from '@lucide/astro';
             errorBlock.classList.remove('hidden');
           }
           if (submitBtn) submitBtn.disabled = false;
-          if (btnText) btnText.textContent = 'Postular mi Restaurante (10 cupos)';
+          if (btnText) btnText.textContent = 'Unirme a la lista de espera';
         }
       });
     }
