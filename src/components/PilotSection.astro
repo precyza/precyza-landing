@@ -131,64 +131,28 @@ import { Check, Sparkles, Shield, Users, ArrowRight } from '@lucide/astro';
               </div>
 
               <div>
-                <label for="city" class="block text-[13px] font-medium text-[#2B2D33]">Ciudad</label>
+                <label for="whatsapp" class="block text-[13px] font-medium text-[#2B2D33]">Teléfono WhatsApp de contacto</label>
                 <input
-                  type="text"
-                  id="city"
-                  name="city"
+                  type="tel"
+                  id="whatsapp"
+                  name="whatsapp"
                   required
-                  placeholder="Ej. Caracas, Valencia..."
+                  placeholder="Ej. +58 412 1234567"
                   class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] placeholder-[#5C616B]/60 focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all"
                 />
               </div>
             </div>
 
             <div>
-              <label for="whatsapp" class="block text-[13px] font-medium text-[#2B2D33]">Teléfono WhatsApp de contacto</label>
-              <input
-                type="tel"
-                id="whatsapp"
-                name="whatsapp"
+              <label for="problem" class="block text-[13px] font-medium text-[#2B2D33]">¿Qué problema esperas resolver con Precyza?</label>
+              <textarea
+                id="problem"
+                name="problem"
                 required
-                placeholder="Ej. +58 412 1234567"
-                class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] placeholder-[#5C616B]/60 focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all"
-              />
-            </div>
-
-            <div>
-              <label for="pos-system" class="block text-[13px] font-medium text-[#2B2D33]">¿Qué sistema de caja / POS o ERP usan actualmente?</label>
-              <select
-                id="pos-system"
-                name="pos_system"
-                required
-                class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all"
-              >
-                <option value="" disabled selected>Selecciona una opción...</option>
-                <option value="Saint Enterprise">Saint Enterprise POS</option>
-                <option value="Profit Plus">Profit Plus</option>
-                <option value="Valery Software">Valery Software</option>
-                <option value="Odoo">Odoo ERP</option>
-                <option value="Stellar POS">Stellar POS</option>
-                <option value="Software Propio">Software Propio / Base de Datos SQL</option>
-                <option value="Otro">Otro sistema (especificar en la llamada)</option>
-                <option value="Ninguno">No usamos sistema formal todavía</option>
-              </select>
-            </div>
-
-            <div>
-              <label for="volume" class="block text-[13px] font-medium text-[#2B2D33]">Volumen estimado de pedidos diarios por WhatsApp</label>
-              <select
-                id="volume"
-                name="volume"
-                required
-                class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all"
-              >
-                <option value="" disabled selected>Selecciona rango de pedidos...</option>
-                <option value="Menos de 20">Menos de 20 pedidos / día</option>
-                <option value="20 a 50">20 a 50 pedidos / día</option>
-                <option value="50 a 100">50 a 100 pedidos / día</option>
-                <option value="Más de 100">Más de 100 pedidos / día</option>
-              </select>
+                rows="3"
+                placeholder="Ej. Pérdida de tiempo con notas de voz, capturas falsas de Pago Móvil, descuadres al cierre de caja..."
+                class="mt-1.5 w-full rounded-xl border border-[#0B2545]/15 bg-[#F4F5F7] px-3.5 py-2.5 text-[14px] text-[#2B2D33] placeholder-[#5C616B]/60 focus:border-[#0FA968] focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#0FA968]/20 transition-all resize-none"
+              ></textarea>
             </div>
 
             <div id="form-error" class="hidden text-xs text-red-600 bg-red-50 border border-red-200 rounded-lg p-2.5 mt-2"></div>

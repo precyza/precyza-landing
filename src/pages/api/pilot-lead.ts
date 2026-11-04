@@ -5,7 +5,7 @@ export const prerender = false;
 export const POST: APIRoute = async ({ request }) => {
   try {
     const data = await request.json();
-    const { name, restaurant, city, whatsapp, pos_system, volume } = data;
+    const { name, restaurant, whatsapp, problem } = data;
 
     if (!name || !restaurant || !whatsapp) {
       return new Response(
@@ -39,10 +39,10 @@ export const POST: APIRoute = async ({ request }) => {
 
 👤 <b>Responsable:</b> ${escapeHtml(name)}
 🏢 <b>Restaurante:</b> ${escapeHtml(restaurant)}
-📍 <b>Ciudad:</b> ${escapeHtml(city || 'No especificada')}
 📱 <b>WhatsApp:</b> ${waLink ? `<a href="${waLink}">${escapeHtml(whatsapp)}</a>` : escapeHtml(whatsapp)}
-💻 <b>POS / ERP Actual:</b> ${escapeHtml(pos_system || 'No especificado')}
-📊 <b>Volumen Diario:</b> ${escapeHtml(volume || 'No especificado')}
+🎯 <b>Problema que espera resolver:</b>
+${escapeHtml(problem || 'No especificado')}
+
 ⏰ <b>Fecha:</b> ${now}`;
 
     const telegramRes = await fetch(`https://api.telegram.org/bot${botToken}/sendMessage`, {
