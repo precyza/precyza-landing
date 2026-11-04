@@ -1,5 +1,5 @@
 ---
-import { ArrowRight, ChevronDown } from '@lucide/astro';
+import { ArrowRight } from '@lucide/astro';
 ---
 
 <section class="relative overflow-hidden pt-20 pb-28 md:pt-32 md:pb-36 text-white bg-[#030712]">
@@ -47,28 +47,20 @@ import { ArrowRight, ChevronDown } from '@lucide/astro';
       Recibe pedidos en WhatsApp por mensaje o nota de voz, calcula el delivery por zona, valida cada Pago Móvil en tu banco al instante y pasa la orden a cocina sin tocar una sola tecla.
     </p>
 
-    <!-- CTAs -->
-    <div class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
+    <!-- CTA Button (Centered) -->
+    <div class="mt-10 flex items-center justify-center">
       <a
         href="#piloto"
-        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full bg-warp-emerald px-8 py-4 text-[15px] font-medium text-white shadow-[0_4px_28px_rgba(15,169,104,0.45)] transition-all hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0FA968]"
+        class="inline-flex items-center justify-center gap-2 rounded-full bg-warp-emerald px-9 py-4 text-[16px] font-medium text-white shadow-[0_4px_28px_rgba(15,169,104,0.45)] transition-all hover:scale-[1.02] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0FA968]"
       >
-        <span>Postular mi restaurante (10 cupos)</span>
+        <span>Registrar mi restaurante</span>
         <ArrowRight class="h-4 w-4" />
-      </a>
-
-      <a
-        href="#flujo"
-        class="w-full sm:w-auto inline-flex items-center justify-center gap-2 rounded-full border border-white/20 bg-white/10 px-7 py-4 text-[15px] font-medium text-white backdrop-blur-md transition-colors hover:bg-white/15"
-      >
-        <span>Ver el flujo animado</span>
-        <ChevronDown class="h-4 w-4" />
       </a>
     </div>
 
-    <!-- Scarcity indicator -->
-    <div class="mt-8 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-[13px] text-[#F4F5F7]/90 backdrop-blur-md">
-      <span class="inline-block h-2 w-2 rounded-full bg-[#0FA968] animate-pulse"></span>
+    <!-- Scarcity indicator (+10% font size) -->
+    <div class="mt-8 inline-flex items-center gap-2.5 rounded-full border border-white/15 bg-white/5 px-5 py-2 text-[14.5px] text-[#F4F5F7]/90 backdrop-blur-md">
+      <span class="inline-block h-2.5 w-2.5 rounded-full bg-[#0FA968] animate-pulse"></span>
       <span>Convocatoria Fundadores para Venezuela · <strong>Solo 10 restaurantes</strong></span>
     </div>
 
