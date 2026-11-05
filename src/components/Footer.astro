@@ -1,17 +1,20 @@
 ---
+import { Image } from 'astro:assets';
+import logoLight from '../assets/brand/logo-emerald-on-light.png';
 ---
 
 <footer class="border-t border-[#0B2545]/8 bg-white py-12">
   <div class="mx-auto max-w-7xl px-6 lg:px-8">
     <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-8 border-b border-[#0B2545]/8">
       <div class="flex flex-col items-center md:items-start gap-2">
-        <img
-          src="/brand/logo-emerald-on-light.png"
-          alt="Precyza"
-          class="h-8 w-auto object-contain"
-          width="118"
-          height="32"
-        />
+        <a href="/" class="transition-opacity hover:opacity-90">
+          <Image
+            src={logoLight}
+            alt="Precyza"
+            class="h-8 w-auto object-contain"
+            loading="lazy"
+          />
+        </a>
         <p class="text-[13px] text-[#5C616B]">
           Tecnología de precisión comercial, automatización de pedidos y conexión ERP/POS.
         </p>
